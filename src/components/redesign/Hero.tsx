@@ -11,7 +11,13 @@ export function Hero() {
 
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 pb-14 pt-10 sm:px-6 lg:grid-cols-[1.05fr_1fr] lg:gap-8 lg:pb-24 lg:pt-16">
         <div className="max-w-xl">
-          <p className="eyebrow">Aesthetic Clinic · Bletchley, Milton Keynes</p>
+          <div className="flex flex-wrap items-center gap-3">
+            <p className="eyebrow">Aesthetic Clinic · Bletchley, Milton Keynes</p>
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1.5 text-[12px] font-semibold text-ink shadow">
+              <span className="flex text-gold">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="size-3.5 fill-current" />)}</span>
+              5.0 on Google
+            </span>
+          </div>
           <h1 className="font-display mt-5 text-[44px] leading-[1.02] text-ink sm:text-6xl lg:text-[72px]">
             Natural-looking <em className="italic text-plum">injectables</em> &amp; advanced facials
           </h1>

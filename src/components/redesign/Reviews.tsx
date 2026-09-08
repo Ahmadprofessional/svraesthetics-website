@@ -15,6 +15,10 @@ export function Reviews() {
               <h2 className="font-display mt-4 text-4xl leading-tight text-ink sm:text-5xl">
                 What patients say <span className="italic text-plum">afterwards</span>
               </h2>
+              <p className="mt-4 flex items-center gap-2 text-[14px] font-semibold text-ink">
+                <span className="flex text-gold">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="size-4 fill-current" />)}</span>
+                5.0 rating on Google
+              </p>
             </div>
             <a href={siteInfo.googleReviews} target="_blank" rel="noopener noreferrer" className="inline-flex items-center rounded-full border border-plum px-6 py-3 text-[14px] font-semibold text-plum transition-colors hover:bg-plum hover:text-white">
               Read all reviews on Google

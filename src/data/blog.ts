@@ -9,7 +9,7 @@ export const blogPosts: BlogPost[] = [
     category: "Aesthetic blogs",
     excerpt:
       "Many individuals want to achieve younger-looking skin, and in Milton Keynes, you have access to skin treatments that can help you turn back the clock. Let's explore the top 10 modern skin treatments.",
-    image: "https://svraesthetics.co.uk/wp-content/uploads/2023/08/Dermal-fillers.webp",
+    image: "/images/blog/top-10-advanced-skin-treatments.webp",
     sections: [
       { heading: "1. Chemical Peel", body: "A chemical peel can rejuvenate your skin, leaving it looking brighter and more youthful. This cosmetic procedure involves the controlled removal of the top layer of skin using chemical agents. Chemical peels come in three main categories — light, medium-depth, and deep — and can address fine lines, acne and acne scars, stretch marks, melasma, hyperpigmentation, sun damage, scars, dull skin, and enlarged pores." },
       { heading: "2. Microneedling", body: "Microneedling is a minimally invasive technique that employs fine needles to create small punctures in the top layer of the skin, triggering the body's natural healing response and stimulating collagen and elastin production. It's beneficial for enlarged pores, fine lines, loose skin, mild scars, discoloration, and stretch marks — but those with acne, blood disorders, or undergoing cancer treatment should consult a provider first." },
@@ -32,7 +32,7 @@ export const blogPosts: BlogPost[] = [
     category: "Aesthetic blogs",
     excerpt:
       "This article explores the top five aesthetic treatments available in Milton Keynes, including lip fillers, scar removal, mole removal, thread lifts, and non-surgical rhinoplasty.",
-    image: "https://svraesthetics.co.uk/wp-content/uploads/2023/08/svr-banner.webp",
+    image: "/images/blog/top-5-aesthetic-treatments-in-milton-keynes.webp",
     sections: [
       { heading: "Lip Filler", body: "Lip fillers are a highly popular aesthetic treatment in Milton Keynes, sought after for their ability to enhance and achieve fuller, more defined, and plumper lips. SVR Aesthetics is one of the leading clinics offering top-notch lip filler treatments, with a skilled aesthetician advising on the right dosage for natural-looking results." },
       { heading: "Scar Removal", body: "A cosmetic surgery that aims to make scars on the skin look better, whether from wounds, surgeries, acne, or burns. Microneedling inflicts small, controlled wounds on the skin to promote collagen production, while dermal fillers can level depressed scars." },
@@ -50,7 +50,7 @@ export const blogPosts: BlogPost[] = [
     category: "Aesthetic blogs",
     excerpt:
       "This article explores the benefits and process of obtaining anti-wrinkle facial injections in Milton Keynes, highlighting their effectiveness in rejuvenating the skin and reducing signs of aging.",
-    image: "https://svraesthetics.co.uk/wp-content/uploads/2026/01/young-woman-getting-beauty-injection-scaled.jpg",
+    image: "/images/blog/where-can-i-get-anti-wrinkle-facial-injections-near-milton-keynes.webp",
     sections: [
       { heading: "What Are Anti-Wrinkle Treatments?", body: "Highly demanded procedures that help patients eliminate fine lines and wrinkles caused by aging, sun exposure, and facial expressions, including topical creams and injectable treatments." },
       { heading: "What Are Anti-Wrinkle Injections?", body: "Minimally invasive treatments that relax specific facial muscles, softening expression lines such as frown lines, crow's feet, and forehead wrinkles by blocking nerve signals to muscles, lasting three to four months." },
@@ -72,7 +72,7 @@ export const blogPosts: BlogPost[] = [
     category: "Aesthetic blogs",
     excerpt:
       "Aesthetic treatments like lip enhancement and dermal fillers are gaining popularity, especially in Milton Keynes, where clinics offer high-quality, non-surgical procedures to enhance natural beauty safely and effectively.",
-    image: "https://svraesthetics.co.uk/wp-content/uploads/2026/01/female-patient-receiving-injection-her-face-scaled.jpg",
+    image: "/images/blog/where-should-i-get-lip-enhancement-and-dermal-fillers-in-milton-keynes.webp",
     sections: [
       { heading: "Introduction", body: "Aesthetic treatments are becoming more popular and efficient, with safe procedures and advanced tools helping people enhance their natural beauty and boost confidence. Lip enhancement and dermal fillers are among the most widely known treatments in the UK." },
       { heading: "Choosing the Right Clinic", body: "To get the best skin results, look for highly rated clinics in Milton Keynes and make an informed decision regarding surgical and non-surgical treatments to reduce the risk of side effects." },
@@ -96,7 +96,7 @@ export const blogPosts: BlogPost[] = [
     category: "Aesthetic blogs",
     excerpt:
       "This article explains the importance of selecting the best tattoo removal treatment, particularly focusing on advanced laser technology such as Pico, and highlights SVR Aesthetics as a top option in Milton Keynes.",
-    image: "https://svraesthetics.co.uk/wp-content/uploads/2026/01/pexels-farhad-19239092-scaled.jpg",
+    image: "/images/blog/why-it-is-essential-to-choose-the-best-tattoo-removal-treatment-in-milton-keynes.webp",
     sections: [
       { heading: "What Is Tattoo Removal, And How Does It Work?", body: "This treatment is tailored to break down and remove permanent ink pigments embedded deep within the skin. Modern methods like Pico laser technology deliver ultra-fast pulses of light energy that shatter the ink into tiny fragments the body's immune system can clear away." },
       { heading: "What Is The Laser Tattoo Removal Process?", body: "The process begins with a free consultation at SVR Aesthetics, where experts assess your tattoo and skin type. With each session, the tattoo fades progressively." },
@@ -115,7 +115,7 @@ export const blogPosts: BlogPost[] = [
     category: "Aesthetic blogs",
     excerpt:
       "This article provides insights into anti-wrinkle treatments in the UK, outlining their benefits, safety, and expected results for those considering such aesthetic procedures.",
-    image: "https://svraesthetics.co.uk/wp-content/uploads/2026/01/smiley-elder-woman-using-injection-her-eye-wrinkles-scaled.jpg",
+    image: "/images/blog/anti-wrinkle-treatment-and-injections.webp",
     sections: [
       { heading: "What is The Best Anti-Wrinkle Treatment In The UK?", body: "As we age, repeated facial expressions lead to dynamic lines. Anti-wrinkle injections effectively target the facial muscles responsible for creating fine lines and wrinkles by relaxing them, offering a refreshed and youthful appearance without compromising natural expressions." },
       { heading: "What Are Anti-Wrinkle Injections?", body: "Primarily Botox, these are among the most popular and effective cosmetic treatments, working by temporarily relaxing facial muscles by blocking nerve signals, with minimal downtime and effects lasting 3-6 months." },

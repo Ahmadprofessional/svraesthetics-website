@@ -9,6 +9,7 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { TreatmentHero } from "./TreatmentHero";
 import { TreatmentAreas, TreatmentAbout, TreatmentResults, TreatmentWhy, TreatmentPricing, TreatmentFaq } from "./TreatmentSections";
 import { StickyBar } from "./StickyBar";
+import { PromoPopup } from "@/components/redesign/PromoPopup";
 
 export function TreatmentPage({ page }: { page: TreatmentPageData }) {
   const jsonLd = [
@@ -61,6 +62,7 @@ export function TreatmentPage({ page }: { page: TreatmentPageData }) {
       <Footer />
       <WhatsAppButton />
       <StickyBar name={page.name} fromPrice={page.fromPrice} />
+      <PromoPopup />
     </div>
   );
 }

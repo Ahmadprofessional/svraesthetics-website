@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@/components/Analytics";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-display",
@@ -33,7 +34,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-GB" className={`${cormorant.variable} ${manrope.variable} h-full antialiased scroll-smooth`}>
-      <body className="min-h-full flex flex-col font-body bg-ivory text-ink">{children}</body>
+      <body className="min-h-full flex flex-col font-body bg-ivory text-ink">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

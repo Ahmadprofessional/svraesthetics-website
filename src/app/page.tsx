@@ -12,6 +12,7 @@ import { Faq } from "@/components/redesign/Faq";
 import { BookingCta } from "@/components/redesign/BookingCta";
 import { Footer } from "@/components/redesign/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { PromoPopup } from "@/components/redesign/PromoPopup";
 import { siteInfo } from "@/data/site";
 
 const localBusinessJsonLd = {
@@ -59,6 +60,7 @@ export default function Home() {
       </main>
       <Footer />
       <WhatsAppButton />
+      <PromoPopup />
     </div>
   );
 }

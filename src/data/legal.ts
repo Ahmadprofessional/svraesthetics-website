@@ -47,15 +47,64 @@ export const legalDocs: LegalDoc[] = [
   {
     slug: "privacy-policy",
     title: "Privacy Policy",
-    intro: "Our website address is https://svraesthetics.co.uk. This policy explains what data we collect through this website and how it is used.",
+    intro:
+      "SVR Aesthetics (\"we\", \"us\") is committed to protecting your privacy. This policy explains what personal information we collect through our website and clinic, how we use it, who we share it with and the rights you have under UK data protection law (UK GDPR and the Data Protection Act 2018).",
     sections: [
-      { heading: "Comments", paragraphs: ["When visitors leave comments on the site we collect the data shown in the comments form, the visitor's IP address and browser user agent string to help spam detection. An anonymised string created from your email address may be provided to the Gravatar service to see if you are using it."] },
-      { heading: "Media", paragraphs: ["If you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included, as visitors can extract location data from images on the website."] },
-      { heading: "Cookies", paragraphs: ["If you leave a comment you may opt in to saving your name, email address and website in cookies for your convenience; these last for one year. If you visit our login page we set a temporary cookie to determine whether your browser accepts cookies; it contains no personal data and is discarded when you close your browser."] },
-      { heading: "Embedded content from other websites", paragraphs: ["Articles on this site may include embedded content (videos, images, articles). Embedded content from other websites behaves exactly as if you had visited the other website, and those sites may collect data about you, use cookies and monitor your interaction with the embedded content."] },
-      { heading: "How long we retain your data", paragraphs: ["If you leave a comment, the comment and its metadata are retained indefinitely so follow-up comments can be recognised and approved automatically. For registered users we also store the personal information provided in their profile."] },
-      { heading: "What rights you have over your data", paragraphs: ["If you have an account or have left comments, you can request an exported file of the personal data we hold about you, or request that we erase it. This does not include data we are obliged to keep for administrative, legal or security purposes."] },
-      { heading: "Where your data is sent", paragraphs: ["Visitor comments may be checked through an automated spam detection service."] },
+      { heading: "Who we are", paragraphs: ["SVR Aesthetics is an aesthetic clinic located at Unit 2, Stainer Square Centre, Queensway, Bletchley, Milton Keynes, MK2 2FY. We are the data controller for the personal information described in this policy. You can contact us about privacy matters by email at svraesthetics@gmail.com or by phone on 077 92284575."] },
+      {
+        heading: "Information we collect",
+        bullets: [
+          "Contact details you give us through our website forms, WhatsApp, email or phone — your name, phone number, email address and the treatment you are interested in.",
+          "Consultation and treatment records — your medical history, medications, allergies, consent forms, treatment notes and clinical photographs. This is special category (health) data.",
+          "Payment information — records of payments and booking fees (card details are processed by our payment provider and are not stored by us).",
+          "Website usage data — pages visited, device type, approximate location and how you found us, collected through cookies and analytics tools (see Cookies below).",
+          "Reviews and feedback you choose to leave, and any complaint correspondence.",
+        ],
+      },
+      {
+        heading: "How we use your information and our lawful basis",
+        bullets: [
+          "To respond to enquiries and book, confirm and remind you of appointments — performance of a contract / steps taken at your request.",
+          "To assess your suitability for treatment and deliver treatment safely — provision of health care, with your explicit consent for health data.",
+          "To keep accurate clinical records as required by our professional and regulatory obligations — legal obligation and provision of health care.",
+          "To take payments and keep financial records — performance of a contract and legal obligation.",
+          "To improve our website and measure the effectiveness of our advertising (including Google Ads and Meta ads) — legitimate interests, and consent where cookies are used.",
+          "To send you information about offers or treatments you have asked about — consent, which you can withdraw at any time by replying STOP or contacting us.",
+        ],
+      },
+      {
+        heading: "Who we share your information with",
+        paragraphs: ["We never sell your personal information. We share it only where necessary with:"],
+        bullets: [
+          "Our email and booking service providers, who deliver form submissions and appointment communications to us.",
+          "Your GP or other healthcare professionals, only with your consent or where required for your safety.",
+          "Prescribing and pharmacy partners for prescription-only medicines.",
+          "Payment processors for card payments.",
+          "Analytics and advertising platforms (for example Google and Meta) in anonymised or pseudonymised form to measure our marketing.",
+          "Regulators, insurers or legal advisers where we are required to do so by law or to defend a claim.",
+        ],
+      },
+      { heading: "How long we keep your information", paragraphs: ["Clinical records are retained for at least 8 years from your last treatment (or until age 25 for anyone treated under 18, which we do not do), in line with NHS records management guidance and our insurer's requirements. Enquiry details for people who do not become clients are deleted within 12 months. Financial records are kept for 6 years as required by HMRC. Website analytics data is retained according to the settings of the tools we use, typically no longer than 26 months."] },
+      {
+        heading: "Cookies and analytics",
+        paragraphs: ["Our website uses strictly necessary cookies to function, and — with your consent — analytics and advertising cookies from Google (Google Analytics, Google Ads) and Meta to understand how visitors use the site and to measure our advertising. You can manage or withdraw consent at any time through your browser settings or our cookie banner. Blocking cookies may affect some website features."],
+      },
+      {
+        heading: "Your rights",
+        paragraphs: ["Under UK GDPR you have the right to:"],
+        bullets: [
+          "Access the personal information we hold about you and receive a copy.",
+          "Ask us to correct information that is inaccurate or incomplete.",
+          "Ask us to delete your information, where we have no overriding legal or clinical obligation to keep it.",
+          "Restrict or object to how we use your information, including for direct marketing.",
+          "Withdraw consent at any time where we rely on consent.",
+          "Receive your information in a portable format.",
+        ],
+        },
+      { paragraphs: ["To exercise any of these rights, contact us using the details above. We will respond within one month. If you are unhappy with how we handle your information you can complain to the Information Commissioner's Office (ICO) at ico.org.uk or on 0303 123 1113."] },
+      { heading: "Security", paragraphs: ["We keep your information secure using access controls, encrypted transmission on our website, and locked or password-protected clinical records. Only staff who need your information to provide your care can access it."] },
+      { heading: "Children", paragraphs: ["We only treat clients aged 18 and over and do not knowingly collect information from anyone under 18."] },
+      { heading: "Changes to this policy", paragraphs: ["We may update this policy from time to time. The latest version will always be published on this page with the date it was last reviewed."] },
     ],
   },
 ];

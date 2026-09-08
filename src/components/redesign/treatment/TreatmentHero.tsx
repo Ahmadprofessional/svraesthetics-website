@@ -3,13 +3,66 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ChevronRight, Phone, ShieldCheck } from "lucide-react";
+import { ArrowRight, ChevronRight, Phone, ShieldCheck, Star } from "lucide-react";
 import type { TreatmentPageData } from "@/types/treatment-page";
 import { siteInfo } from "@/data/site";
+import { submitLead, trackContactClick } from "@/lib/leads";
+
+export function RatingBadge({ dark = false }: { dark?: boolean }) {
+  return (
+    <span className={`inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-[12px] font-semibold ${dark ? "bg-ivory/10 text-ivory" : "bg-white/90 text-ink shadow"}`}>
+      <span className="flex text-gold">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="size-3.5 fill-current" />)}</span>
+      5.0 on Google
+    </span>
+  );
+}
+
+export function CallbackForm({ treatmentName, source }: { treatmentName: string; source: string }) {
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [error, setError] = useState("");
+
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    setStatus("sending");
+    const res = await submitLead({
+      name: String(fd.get("name") ?? ""),
+      phone: String(fd.get("phone") ?? ""),
+      treatment: treatmentName,
+      website: String(fd.get("website") ?? ""),
+      source,
+    });
+    if (res.ok) {
+      setStatus("sent");
+      form.reset();
+    } else {
+      setStatus("error");
+      setError(res.error);
+    }
+  }
+
+  return (
+    <form onSubmit={onSubmit} className="relative -mt-10 mx-4 rounded-2xl bg-white p-5 shadow-[0_30px_60px_-30px_rgba(43,37,48,0.45)] sm:mx-6">
+      <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
+      <div className="flex items-center justify-between gap-3">
+        <p className="font-display text-2xl text-ink">Request a call back</p>
+        <span className="flex items-center gap-1 text-[11px] font-semibold text-plum"><ShieldCheck className="size-3.5" /> Free · No obligation</span>
+      </div>
+      <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <input name="name" required placeholder="Your name" aria-label="Your name" className="rounded-xl border border-sand px-4 py-3 text-[14px] outline-none focus:border-plum" />
+        <input name="phone" type="tel" required placeholder="Phone number" aria-label="Phone number" className="rounded-xl border border-sand px-4 py-3 text-[14px] outline-none focus:border-plum" />
+      </div>
+      <button type="submit" disabled={status === "sending"} className="mt-3 w-full rounded-full bg-plum py-3.5 text-[14px] font-semibold text-white transition-colors hover:bg-plum-deep disabled:opacity-60">
+        {status === "sending" ? "Sending…" : `Book my free ${treatmentName.toLowerCase()} consultation`}
+      </button>
+      {status === "sent" && <p className="mt-3 text-center text-[13px] font-medium text-plum" role="status">Thank you — we&apos;ll call you shortly.</p>}
+      {status === "error" && <p className="mt-3 text-center text-[13px] font-medium text-ink" role="alert">{error} Call {siteInfo.phone}.</p>}
+    </form>
+  );
+}
 
 export function TreatmentHero({ page }: { page: TreatmentPageData }) {
-  const [sent, setSent] = useState(false);
-
   return (
     <section className="relative overflow-hidden bg-ivory">
       <div className="pointer-events-none absolute -right-40 -top-20 size-[560px] rounded-full bg-plum-soft blur-3xl" />
@@ -26,7 +79,10 @@ export function TreatmentHero({ page }: { page: TreatmentPageData }) {
 
         <div className="mt-8 grid grid-cols-1 gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
           <div>
-            <p className="eyebrow">{page.category} · Milton Keynes</p>
+            <div className="flex flex-wrap items-center gap-3">
+              <p className="eyebrow">{page.category} · Milton Keynes</p>
+              <RatingBadge />
+            </div>
             <h1 className="font-display mt-4 text-[42px] leading-[1.02] text-ink sm:text-6xl lg:text-[68px]">
               {page.heroHeading} <em className="italic text-plum">{page.heroHighlight}</em>
             </h1>
@@ -36,7 +92,7 @@ export function TreatmentHero({ page }: { page: TreatmentPageData }) {
               <a href="#book" className="group inline-flex items-center justify-center gap-2 rounded-full bg-plum px-7 py-4 text-[15px] font-semibold text-white shadow-[0_18px_40px_-16px_rgba(75,42,99,0.9)] transition-all hover:-translate-y-0.5 hover:bg-plum-deep">
                 Book your free consultation <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
               </a>
-              <a href={siteInfo.phoneHref} className="inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 bg-white/60 px-7 py-4 text-[15px] font-semibold text-ink backdrop-blur transition-colors hover:border-plum hover:text-plum">
+              <a href={siteInfo.phoneHref} onClick={() => trackContactClick("call")} className="inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 bg-white/60 px-7 py-4 text-[15px] font-semibold text-ink backdrop-blur transition-colors hover:border-plum hover:text-plum">
                 <Phone className="size-4" /> {siteInfo.phone}
               </a>
             </div>
@@ -59,27 +115,7 @@ export function TreatmentHero({ page }: { page: TreatmentPageData }) {
                 First treatment 25% off
               </div>
             </div>
-
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                setSent(true);
-              }}
-              className="relative -mt-10 mx-4 rounded-2xl bg-white p-5 shadow-[0_30px_60px_-30px_rgba(43,37,48,0.45)] sm:mx-6"
-            >
-              <div className="flex items-center justify-between">
-                <p className="font-display text-2xl text-ink">Request a call back</p>
-                <span className="flex items-center gap-1 text-[11px] font-semibold text-plum"><ShieldCheck className="size-3.5" /> Free · No obligation</span>
-              </div>
-              <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                <input name="name" required placeholder="Your name" className="rounded-xl border border-sand px-4 py-3 text-[14px] outline-none focus:border-plum" />
-                <input name="phone" type="tel" required placeholder="Phone number" className="rounded-xl border border-sand px-4 py-3 text-[14px] outline-none focus:border-plum" />
-              </div>
-              <button type="submit" className="mt-3 w-full rounded-full bg-plum py-3.5 text-[14px] font-semibold text-white transition-colors hover:bg-plum-deep">
-                Book my free {page.name.toLowerCase()} consultation
-              </button>
-              {sent && <p className="mt-3 text-center text-[13px] font-medium text-plum">Thank you — we&apos;ll call you shortly.</p>}
-            </form>
+            <CallbackForm treatmentName={page.name} source={`treatment-hero:${page.slug}`} />
           </div>
         </div>
       </div>
