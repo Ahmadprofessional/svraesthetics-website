@@ -1,0 +1,80 @@
+import type { TreatmentPageData } from "@/types/treatment-page";
+
+export const dermalFillersPage: TreatmentPageData = {
+  slug: "dermal-fillers-in-milton-keynes",
+  category: "Injectables",
+  name: "Dermal Fillers",
+  metaTitle: "Dermal Fillers Milton Keynes | From £100 | SVR Aesthetics",
+  metaDescription:
+    "Natural-looking dermal fillers in Milton Keynes by a Registered Nurse Prescriber. Lips, cheeks, chin, jawline, tear trough and nose. From £100, free consultation, 25% off your first treatment.",
+  heroHeading: "Dermal Fillers in",
+  heroHighlight: "Milton Keynes",
+  heroIntro:
+    "Restore lost volume, soften lines and refine your natural contours with premium hyaluronic acid fillers — placed with a nurse's precision and an artist's restraint. Results you'll see immediately, and nobody else will be able to explain.",
+  heroImage: "/images/redesign/dermal-fillers-hero.webp",
+  heroImageAlt: "Woman with naturally balanced lips and cheek contours after dermal filler treatment at SVR Aesthetics, Milton Keynes",
+  fromPrice: "£100",
+  quickFacts: [
+    { label: "Price", value: "From £100" },
+    { label: "Treatment time", value: "30–45 min" },
+    { label: "Results", value: "Immediate" },
+    { label: "Lasts", value: "6–24 months" },
+    { label: "Downtime", value: "Minimal" },
+  ],
+  areasHeading: "Where we use dermal fillers",
+  areasIntro:
+    "Every face is different, so every plan is different. These are the areas we treat most — many clients combine two or three for a subtle, balanced refresh.",
+  areas: [
+    { name: "Lips", text: "Hydration, definition and natural fullness shaped to your own lip lines — never the 'done' look.", href: "/lip-enhancement-milton-keynes" },
+    { name: "Cheeks", text: "Lift and restore mid-face volume for youthful contours and a gentle lifting effect. Lasts up to 18 months.", href: "/cheek-augmentation-milton-keynes" },
+    { name: "Chin", text: "Improve projection and balance your profile, smoothing dimpling or sagging.", href: "/chin-filler-milton-keynes" },
+    { name: "Jawline", text: "Sharper definition, better symmetry and a tighter-looking lower face.", href: "/jawline-filler-milton-keynes" },
+    { name: "Tear trough", text: "Brighten hollow, tired-looking under-eyes and reduce dark shadows.", href: "/tear-trough-filler-milton-keynes" },
+    { name: "Nose", text: "A 15-minute liquid rhinoplasty to smooth bumps and lift the tip — no surgery.", href: "/non-surgical-rhinoplasty-milton-keynes" },
+    { name: "Nose-to-mouth lines", text: "Soften nasolabial folds and marionette lines for a rested, softer expression.", href: "/nose-to-mouth-lines-milton-keynes" },
+    { name: "Hands", text: "Plump crepey, veiny hands with the same natural approach we use on the face.", href: "/hand-filler-milton-keynes" },
+  ],
+  aboutHeading: "What are dermal fillers,",
+  aboutHighlight: "really?",
+  aboutParagraphs: [
+    "Dermal fillers are smooth, injectable gels made from hyaluronic acid — a sugar molecule your skin already produces to hold water and stay plump. As we age we lose collagen, fat and bone support, and the face begins to look flatter and more tired. Filler replaces that lost structure exactly where it's needed.",
+    "At SVR Aesthetics we only use premium, CE-marked hyaluronic acid fillers that integrate seamlessly with your own tissue. They are fully reversible — Sonali is trained and equipped to dissolve filler with hyaluronidase should you ever need it, which is a safety net far too many clinics don't offer.",
+  ],
+  aboutBullets: [
+    "Immediate, visible results with gradual settling over two weeks",
+    "Natural, healthy, well-rested appearance — not 'overfilled'",
+    "Lasts 6 months to 2 years depending on area and product",
+    "Fully reversible with hyaluronidase for complete peace of mind",
+  ],
+  aboutImage: "/images/redesign/injectables.webp",
+  whyHeading: "Why have your fillers with Sonali",
+  whyPoints: [
+    { title: "Registered Nurse Prescriber", text: "Over 15 years in NHS operating theatres before aesthetics. Medical training you can actually check." },
+    { title: "Free, honest consultation", text: "A full facial assessment and a plan built around your features and your budget — with a clear quote before anything begins." },
+    { title: "Premium products only", text: "Leading hyaluronic acid fillers chosen for safety, performance and longevity. No bargain-bin brands." },
+    { title: "Hyaluronidase on site", text: "Filler can be dissolved if needed. Safety first, always." },
+  ],
+  pricing: [
+    { name: "Dermal fillers", price: "from £100", note: "Exact price depends on area and volume" },
+    { name: "Lip enhancement", price: "from £100" },
+    { name: "Cheek augmentation", price: "quoted at consultation", note: "Results last up to 18 months" },
+    { name: "Chin & jawline", price: "quoted at consultation" },
+    { name: "Tear trough", price: "quoted at consultation" },
+    { name: "Non-surgical rhinoplasty", price: "quoted at consultation" },
+  ],
+  pricingNote: "Your first treatment is 25% off. Prices are starting prices; your exact quote is confirmed in your free consultation before any treatment.",
+  faq: [
+    { question: "What areas can dermal fillers enhance?", answer: "Dermal fillers can enhance the lips, cheeks, chin, jawline, tear troughs (under-eyes), nose, nose-to-mouth lines, marionette lines and hands." },
+    { question: "How long do results last?", answer: "Results can last anywhere from 6 months to 2 years depending on the area treated, the type of filler used and your own metabolism. Cheek filler typically lasts up to 18 months; lips around 6–12 months." },
+    { question: "Is there any downtime after the treatment?", answer: "Some swelling, redness or light bruising can occur, but most people return to their daily activities immediately. We'll give you clear aftercare guidance to minimise any swelling." },
+    { question: "How many ml of filler do I need?", answer: "It varies by individual and goal — many first-time lip clients start with 0.5–1ml. During your free consultation we'll recommend the right amount for a natural result and confirm the exact price." },
+    { question: "Does it hurt?", answer: "Most fillers contain a local anaesthetic and we can apply numbing cream beforehand, so discomfort is minimal — most clients describe a slight pressure rather than pain." },
+    { question: "Can filler be removed?", answer: "Yes. Hyaluronic acid fillers can be dissolved with hyaluronidase, which Sonali keeps in clinic. This is one of the reasons we only use HA fillers." },
+  ],
+  related: [
+    { name: "Lip Enhancement", href: "/lip-enhancement-milton-keynes" },
+    { name: "Anti-Wrinkle Injections", href: "/anti-wrinkle-milton-keynes" },
+    { name: "Non-Surgical Facelift", href: "/non-surgical-facelift-milton-keynes" },
+    { name: "Tear Trough Filler", href: "/tear-trough-filler-milton-keynes" },
+  ],
+};
