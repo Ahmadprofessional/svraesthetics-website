@@ -7,7 +7,7 @@ import { Reviews } from "@/components/redesign/Reviews";
 import { BookingCta } from "@/components/redesign/BookingCta";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { TreatmentHero } from "./TreatmentHero";
-import { TreatmentAreas, TreatmentAbout, TreatmentWhy, TreatmentPricing, TreatmentFaq } from "./TreatmentSections";
+import { TreatmentAreas, TreatmentAbout, TreatmentResults, TreatmentWhy, TreatmentPricing, TreatmentFaq } from "./TreatmentSections";
 import { StickyBar } from "./StickyBar";
 
 export function TreatmentPage({ page }: { page: TreatmentPageData }) {
@@ -49,6 +49,7 @@ export function TreatmentPage({ page }: { page: TreatmentPageData }) {
         <TreatmentHero page={page} />
         <TreatmentAreas page={page} />
         <TreatmentAbout page={page} />
+        <TreatmentResults page={page} />
         <TreatmentWhy page={page} />
         <Results />
         <TreatmentPricing page={page} />

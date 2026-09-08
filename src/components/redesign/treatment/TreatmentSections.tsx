@@ -24,7 +24,7 @@ export function TreatmentAreas({ page }: { page: TreatmentPageData }) {
                   <h3 className="font-display text-2xl text-ink">{a.name}</h3>
                   {a.href && <ArrowUpRight className="size-4 shrink-0 text-plum opacity-0 transition-opacity group-hover:opacity-100" />}
                 </div>
-                <p className="mt-3 text-[14px] leading-relaxed text-muted-ink">{a.text}</p>
+                {a.text && <p className="mt-3 text-[14px] leading-relaxed text-muted-ink">{a.text}</p>}
               </>
             );
             return (
@@ -71,6 +71,34 @@ export function TreatmentAbout({ page }: { page: TreatmentPageData }) {
             ))}
           </ul>
         </Reveal>
+      </div>
+    </section>
+  );
+}
+
+export function TreatmentResults({ page }: { page: TreatmentPageData }) {
+  if (!page.results) return null;
+  const { heading, intro, bullets } = page.results;
+  return (
+    <section className="bg-cream py-20 lg:py-24">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
+        <Reveal>
+          <p className="eyebrow">Results</p>
+          <h2 className="font-display mt-4 text-4xl leading-tight text-ink sm:text-5xl">{heading}</h2>
+          {intro && <p className="mt-5 text-[16px] leading-relaxed text-muted-ink">{intro}</p>}
+        </Reveal>
+        {bullets.length > 0 && (
+          <Reveal delay={120}>
+            <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {bullets.map((b, i) => (
+                <li key={b} className="flex items-start gap-4 rounded-2xl border border-sand bg-white p-5">
+                  <span className="font-display text-2xl leading-none text-blush">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="text-[14.5px] leading-relaxed text-ink/85">{b}</span>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        )}
       </div>
     </section>
   );

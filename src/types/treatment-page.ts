@@ -5,7 +5,7 @@ export interface QuickFact {
 
 export interface TreatmentArea {
   name: string;
-  text: string;
+  text?: string;
   href?: string;
 }
 
@@ -23,6 +23,12 @@ export interface FaqEntry {
 export interface RelatedLink {
   name: string;
   href: string;
+}
+
+export interface ResultsSection {
+  heading: string;
+  intro: string;
+  bullets: string[];
 }
 
 export interface TreatmentPageData {
@@ -46,6 +52,7 @@ export interface TreatmentPageData {
   aboutParagraphs: string[];
   aboutBullets: string[];
   aboutImage: string;
+  results?: ResultsSection;
   whyHeading: string;
   whyPoints: { title: string; text: string }[];
   pricing: PriceRow[];
