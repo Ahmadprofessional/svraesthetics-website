@@ -1,13 +1,81 @@
 import type { NextConfig } from "next";
 
+// Legacy URLs seen in Search Console for the old WordPress site, mapped to
+// their new equivalents so historical links and rankings carry over.
+const legacyRedirects: Record<string, string> = {
+  "/non-surgical-rhinoplasty": "/non-surgical-rhinoplasty-milton-keynes",
+  "/vitamin-therapy": "/vitamin-therapy-milton-keynes",
+  "/iv-vitamin-therapy-in-milton-keynes": "/vitamin-therapy-milton-keynes",
+  "/facials": "/facials-milton-keynes",
+  "/cryopen": "/cryopen-milton-keynes",
+  "/hydrofacial": "/hydrafacial-milton-keynes",
+  "/hydrofacial-milton-keynes": "/hydrafacial-milton-keynes",
+  "/hydrafacial": "/hydrafacial-milton-keynes",
+  "/jawline-filler": "/jawline-filler-milton-keynes",
+  "/chin-filler": "/chin-filler-milton-keynes",
+  "/cheek-augmentation": "/cheek-augmentation-milton-keynes",
+  "/tear-trough-filler": "/tear-trough-filler-milton-keynes",
+  "/anti-wrinkle": "/anti-wrinkle-milton-keynes",
+  "/anti-wrinkle-injections": "/anti-wrinkle-injections-milton-keynes",
+  "/botox-milton-eynes": "/botox-milton-keynes",
+  "/laser-hair-removal": "/laser-hair-removal-milton-keynes",
+  "/tattoo-removal": "/tattoo-removal-milton-keynes",
+  "/skin-tag-removal": "/skin-tag-removal-milton-keynes",
+  "/lips-enhancement": "/lip-enhancement-milton-keynes",
+  "/nose-to-mouth-lines": "/nose-to-mouth-lines-milton-keynes",
+  "/marionette-lines": "/nose-to-mouth-lines-milton-keynes",
+  "/marionette-lines-milton-keynes": "/nose-to-mouth-lines-milton-keynes",
+  "/hand-filler": "/hand-filler-milton-keynes",
+  "/hyaluronidase-injectables": "/dermal-fillers-in-milton-keynes",
+  "/hyaluronidase-injectables-milton-keynes": "/dermal-fillers-in-milton-keynes",
+  "/neck-lift": "/non-surgical-facelift-milton-keynes",
+  "/non-surgical-neck-lift-milton-keynes": "/non-surgical-facelift-milton-keynes",
+  "/non-surgical-facelift": "/non-surgical-facelift-milton-keynes",
+  "/non-surgical-face-lift": "/non-surgical-facelift-milton-keynes",
+  "/hifu-body-lift": "/non-surgical-facelift-milton-keynes",
+  "/jaw-tightening": "/jaw-tightening-milton-keynes",
+  "/jaw-tightening-treatments": "/jaw-tightening-milton-keynes",
+  "/chemical-peels": "/chemical-peels-milton-keynes",
+  "/skin-peels": "/chemical-peels-milton-keynes",
+  "/skin-peels-milton-keynes": "/chemical-peels-milton-keynes",
+  "/carbon-peel": "/carbon-peel-milton-keynes",
+  "/dermal-fillers": "/dermal-fillers-in-milton-keynes",
+  "/medical-microneedling": "/best-results-microneedling-in-milton-keynes-svr-aesthetics",
+  "/medical-microneedling-milton-keynes": "/best-results-microneedling-in-milton-keynes-svr-aesthetics",
+  "/best-skinpen-microneedling-treatment-in-milton-keynes": "/best-results-microneedling-in-milton-keynes-svr-aesthetics",
+  "/fat-dissolving-injections": "/fat-dissolving-injections-milton-keynes",
+  "/full-body-massage-2": "/full-body-massage-milton-keynes",
+  "/first-aid-and-anaphylaxis": "/first-aid-anaphylaxis-training-milton-keynes",
+  "/skin-rejuvenation": "/facials-milton-keynes",
+  "/polynucleotide-treatment-milton-keynes": "/treatments",
+  "/profhilo-clinic-milton-keynes": "/treatments",
+  "/vaginal-tightening": "/treatments",
+  "/skin-clinic-milton-keynes": "/treatments",
+  "/aesthetics-clinic-milton-keynes": "/treatments",
+  "/skin-and-body-clinic-in-milton-keynes": "/treatments",
+  "/laser-clinic-milton-keynes": "/laser-hair-removal-milton-keynes",
+  "/beauty-clinic-milton-keynes": "/treatments",
+  "/cosmetic-clinic-milton-keynes": "/treatments",
+  "/acne-clinic-milton-keynes": "/facials-milton-keynes",
+  "/facial-aesthetics-milton-keynes": "/facials-milton-keynes",
+  "/mrs-sonali": "/about-us",
+  "/landing-page": "/",
+  "/sample-page": "/",
+  "/calender-page": "/book-free-consultation",
+};
+
 const nextConfig: NextConfig = {
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "svraesthetics.co.uk",
-      },
-    ],
+    remotePatterns: [{ protocol: "https", hostname: "svraesthetics.co.uk" }],
+  },
+  async redirects() {
+    return [
+      ...Object.entries(legacyRedirects).map(([source, destination]) => ({ source, destination, permanent: true })),
+      { source: "/aesthetic-blogs/:path*", destination: "/blogs", permanent: true },
+      { source: "/category/:path*", destination: "/blogs", permanent: true },
+      { source: "/tag/:path*", destination: "/blogs", permanent: true },
+      { source: "/author/:path*", destination: "/blogs", permanent: true },
+    ];
   },
 };
 

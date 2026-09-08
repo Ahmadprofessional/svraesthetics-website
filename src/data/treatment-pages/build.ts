@@ -101,7 +101,9 @@ export function buildTreatmentPage(t: Treatment): TreatmentPageData {
   const group = treatmentGroups.find((g) => g.items.some((i) => i.href === `/${t.slug}`) || g.href === `/${t.slug}`);
   const siblings = (group ? [{ label: group.label, href: group.href }, ...group.items] : []).filter((l) => l.href !== `/${t.slug}`);
 
-  const usesSiteWideList = t.whoWeOffer.length > 9;
+  // The crawled "who we offer" list is either the site-wide menu (too long) or a
+  // single item (too thin); in both cases show sibling treatments instead.
+  const usesSiteWideList = t.whoWeOffer.length > 9 || t.whoWeOffer.length < 3;
   const areas: TreatmentArea[] = usesSiteWideList
     ? siblings.slice(0, 8).map((s) => ({ name: s.label, href: s.href, text: `Explore ${s.label.toLowerCase()} at SVR Aesthetics.` }))
     : t.whoWeOffer.map((w) => {
