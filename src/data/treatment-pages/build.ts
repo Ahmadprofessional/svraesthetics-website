@@ -133,7 +133,7 @@ export function buildTreatmentPage(t: Treatment): TreatmentPageData {
   const pricing = [
     { name, price: cfg?.fromPrice ? `from ${cfg.fromPrice}` : "quoted at consultation", note: cfg?.fromPrice ? "Exact price depends on area and treatment plan" : "A clear quote is agreed before any treatment" },
     { name: "Consultation", price: "Free", note: "No obligation" },
-    { name: "First treatment", price: "25% off" },
+    { name: "First treatment", price: "up to 25% off" },
   ];
 
   return {
@@ -141,7 +141,7 @@ export function buildTreatmentPage(t: Treatment): TreatmentPageData {
     category,
     name,
     metaTitle: `${name} Milton Keynes${cfg?.fromPrice ? ` | From ${cfg.fromPrice}` : ""} | SVR Aesthetics`,
-    metaDescription: `${heroSentences[0]} Nurse-led ${name.toLowerCase()} in Bletchley, Milton Keynes. Free consultation, 25% off your first treatment.`.slice(0, 300),
+    metaDescription: `${heroSentences[0]} Nurse-led ${name.toLowerCase()} in Bletchley, Milton Keynes. Free consultation, up to 25% off your first treatment.`.slice(0, 300),
     heroHeading: `${name} in`,
     heroHighlight: "Milton Keynes",
     heroIntro,
@@ -163,7 +163,7 @@ export function buildTreatmentPage(t: Treatment): TreatmentPageData {
     whyHeading: `Why have your ${name.toLowerCase()} with Sonali`,
     whyPoints: defaultWhy(name),
     pricing,
-    pricingNote: "Your first treatment is 25% off. Prices are starting prices; your exact quote is confirmed in your free consultation before any treatment.",
+    pricingNote: "Your first treatment could be up to 25% off. Prices are starting prices; your exact quote is confirmed in your free consultation before any treatment.",
     faq,
     related: siblings.slice(0, 4).map((s) => ({ name: s.label, href: s.href })),
   };

@@ -43,7 +43,7 @@ export function Header() {
       <div className="bg-plum-deep text-ivory">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 text-[12px] tracking-wide sm:px-6">
           <p className="truncate">
-            <span className="font-semibold text-blush">25% off</span> your first treatment · Free consultation · Bletchley, Milton Keynes
+            <span className="font-semibold text-blush">Up to 25% off</span> your first treatment · Free consultation · Bletchley, Milton Keynes
           </p>
           <div className="hidden shrink-0 items-center gap-5 lg:flex">
             {utilityLinks.map((l) => (

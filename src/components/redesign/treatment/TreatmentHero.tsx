@@ -112,7 +112,7 @@ export function TreatmentHero({ page }: { page: TreatmentPageData }) {
               <Image src={page.heroImage} alt={page.heroImageAlt} fill priority sizes="(min-width:1024px) 42vw, 100vw" className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-plum-deep/30 via-transparent to-transparent" />
               <div className="absolute left-5 top-5 rounded-full bg-white/90 px-4 py-2 text-[12px] font-semibold text-plum shadow backdrop-blur">
-                First treatment 25% off
+                Up to 25% off first treatment
               </div>
             </div>
             <CallbackForm treatmentName={page.name} source={`treatment-hero:${page.slug}`} />

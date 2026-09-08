@@ -13,7 +13,7 @@ export function PricingSnapshot() {
               Honest prices, <span className="italic text-plum">no surprises</span>
             </h2>
             <p className="mt-5 text-muted-ink">
-              Starting prices for our most requested treatments. Your consultation is free, and your first treatment is 25% off.
+              Starting prices for our most requested treatments. Your consultation is free, and your first treatment could be up to 25% off.
             </p>
             <a href="/pricing" className="group mt-7 inline-flex items-center gap-2 font-semibold text-plum">
               See the full price list <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />

@@ -59,7 +59,7 @@ export function Hero() {
 
           <div className="animate-float-slow absolute -left-3 top-6 rounded-2xl bg-white/90 px-4 py-3 shadow-[0_20px_40px_-20px_rgba(43,37,48,0.4)] backdrop-blur sm:left-[-28px] sm:top-10">
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-plum">First treatment</p>
-            <p className="font-display mt-0.5 text-3xl leading-none text-ink">25% off</p>
+            <p className="font-display mt-0.5 text-2xl leading-none text-ink">Up to 25% off</p>
           </div>
 
           <div className="absolute -bottom-5 left-4 right-4 rounded-2xl bg-white/95 p-4 shadow-[0_24px_50px_-22px_rgba(43,37,48,0.45)] backdrop-blur sm:left-auto sm:right-[-20px] sm:w-[300px]">

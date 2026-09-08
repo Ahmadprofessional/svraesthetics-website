@@ -4,7 +4,7 @@ const items = [
   "100s of treatments every year",
   "Premium, clinically-safe products",
   "Natural-looking results",
-  "Free consultation · 25% off first treatment",
+  "Free consultation · Up to 25% off first treatment",
 ];
 
 export function TrustMarquee() {

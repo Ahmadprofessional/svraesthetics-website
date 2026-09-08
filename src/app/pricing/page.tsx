@@ -11,7 +11,7 @@ import { Reveal } from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "Treatment Prices Milton Keynes | SVR Aesthetics",
   description:
-    "Transparent aesthetic treatment prices in Milton Keynes. Anti-wrinkle from £150, dermal fillers from £100, facials from £50, skin tag removal from £30. Free consultation and 25% off your first treatment.",
+    "Transparent aesthetic treatment prices in Milton Keynes. Anti-wrinkle from £150, dermal fillers from £100, facials from £50, skin tag removal from £30. Free consultation and up to 25% off your first treatment.",
   alternates: { canonical: "https://svraesthetics.co.uk/pricing" },
 };
 
@@ -22,7 +22,7 @@ export default function PricingPage() {
         eyebrow="Pricing"
         title="Honest prices,"
         highlight="no surprises"
-        intro="Starting prices for our most requested treatments. Your consultation is always free, your first treatment is 25% off, and your exact quote is agreed before anything begins."
+        intro="Starting prices for our most requested treatments. Your consultation is always free, your first treatment could be up to 25% off, and your exact quote is agreed before anything begins."
         crumbs={[{ label: "Pricing" }]}
       />
       <section className="bg-cream py-16 lg:py-20">
@@ -50,7 +50,7 @@ export default function PricingPage() {
           </div>
           <div className="mt-10 rounded-3xl bg-plum p-8 text-ivory sm:flex sm:items-center sm:justify-between">
             <div>
-              <p className="font-display text-3xl">25% off your first treatment</p>
+              <p className="font-display text-3xl">Up to 25% off your first treatment</p>
               <p className="mt-2 text-[15px] text-ivory/80">Book a free, no-obligation consultation and we&apos;ll confirm your exact price.</p>
             </div>
             <a href="#book" className="mt-6 inline-flex shrink-0 items-center gap-2 rounded-full bg-ivory px-6 py-3.5 font-semibold text-plum sm:mt-0">

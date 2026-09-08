@@ -6,19 +6,19 @@ import { BookingCta } from "@/components/redesign/BookingCta";
 import { Reviews } from "@/components/redesign/Reviews";
 
 export const metadata: Metadata = {
-  title: "Book a Free Consultation | 25% Off First Treatment | SVR Aesthetics",
+  title: "Book a Free Consultation | Up to 25% Off First Treatment | SVR Aesthetics",
   description:
-    "Book your free, no-obligation aesthetic consultation in Milton Keynes with Sonali, Registered Nurse Prescriber. Get 25% off your first treatment.",
+    "Book your free, no-obligation aesthetic consultation in Milton Keynes with Sonali, Registered Nurse Prescriber. Get up to 25% off your first treatment.",
   alternates: { canonical: "https://svraesthetics.co.uk/book-free-consultation" },
 };
 
-const steps = ["Tell us what's on your mind", "We call to book a convenient time", "Free consultation & clear quote", "25% off your first treatment"];
+const steps = ["Tell us what's on your mind", "We call to book a convenient time", "Free consultation & clear quote", "Up to 25% off your first treatment"];
 
 export default function BookPage() {
   return (
     <Shell>
       <PageHero
-        eyebrow="Free consultation · 25% off first treatment"
+        eyebrow="Free consultation · Up to 25% off first treatment"
         title="Book your free"
         highlight="consultation"
         intro="No pressure, no obligation. A full assessment with Sonali, honest advice on what will and won't help, and a clear quote before anything begins."

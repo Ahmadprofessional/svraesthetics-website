@@ -47,7 +47,7 @@ export function PromoPopup({ delayMs = 6000 }: { delayMs?: number }) {
       name: String(fd.get("name") ?? ""),
       phone: String(fd.get("phone") ?? ""),
       email: String(fd.get("email") ?? ""),
-      treatment: "25% off first treatment (popup)",
+      treatment: "Up to 25% off first treatment (popup)",
       website: String(fd.get("website") ?? ""),
       source: "promo-popup",
     });
@@ -74,7 +74,7 @@ export function PromoPopup({ delayMs = 6000 }: { delayMs?: number }) {
           <div className="absolute inset-0 bg-gradient-to-t from-plum-deep/70 via-plum-deep/10 to-transparent" />
           <div className="absolute bottom-6 left-6 text-ivory">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-blush">Limited offer</p>
-            <p className="font-display mt-1 text-5xl leading-none">25% off</p>
+            <p className="font-display mt-1 text-5xl leading-none">Up to 25% off</p>
             <p className="mt-1 text-[14px] text-ivory/85">your first treatment</p>
           </div>
         </div>
@@ -95,7 +95,7 @@ export function PromoPopup({ delayMs = 6000 }: { delayMs?: number }) {
               <input name="email" type="email" placeholder="Email" aria-label="Email" className="w-full rounded-xl border border-sand bg-white px-4 py-3 text-[14px] outline-none focus:border-plum" />
               <input name="phone" type="tel" required placeholder="Phone" aria-label="Phone" className="w-full rounded-xl border border-sand bg-white px-4 py-3 text-[14px] outline-none focus:border-plum" />
               <button type="submit" disabled={status === "sending"} className="w-full rounded-full bg-plum py-3.5 text-[15px] font-semibold text-white hover:bg-plum-deep disabled:opacity-60">
-                {status === "sending" ? "Sending…" : "Claim my 25% off"}
+                {status === "sending" ? "Sending…" : "Claim my discount"}
               </button>
               {status === "error" && <p className="text-[13px] font-medium text-ink" role="alert">{error} Call {siteInfo.phone}.</p>}
               <p className="flex items-center gap-1.5 text-[11.5px] text-muted-ink"><ShieldCheck className="size-3.5 text-plum" /> No spam, no obligation. 18+ only.</p>

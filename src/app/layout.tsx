@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://svraesthetics.co.uk"),
   title: "Injectables & Facials in Milton Keynes | SVR Aesthetics",
   description:
-    "Nurse-led aesthetic clinic in Bletchley, Milton Keynes. Natural-looking anti-wrinkle injections, dermal fillers, lip enhancement, HydraFacial, microneedling and chemical peels. Free consultation, 25% off your first treatment.",
+    "Nurse-led aesthetic clinic in Bletchley, Milton Keynes. Natural-looking anti-wrinkle injections, dermal fillers, lip enhancement, HydraFacial, microneedling and chemical peels. Free consultation, up to 25% off your first treatment.",
   openGraph: {
     title: "SVR Aesthetics — Injectables & Facials, Milton Keynes",
     description:

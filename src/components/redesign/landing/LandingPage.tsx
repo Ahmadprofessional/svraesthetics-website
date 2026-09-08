@@ -12,7 +12,7 @@ import { Accordion } from "@/components/Accordion";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Star } from "lucide-react";
 
-const trust = ["Registered Nurse Prescriber", "15+ years NHS experience", "100s of treatments every year", "Free consultation · 25% off first treatment"];
+const trust = ["Registered Nurse Prescriber", "15+ years NHS experience", "100s of treatments every year", "Free consultation · Up to 25% off first treatment"];
 
 export function LandingPage({ page }: { page: LandingPageData }) {
   const source = `lp:${page.slug}`;

@@ -6,7 +6,7 @@ export const dermalFillersPage: TreatmentPageData = {
   name: "Dermal Fillers",
   metaTitle: "Dermal Fillers Milton Keynes | From £100 | SVR Aesthetics",
   metaDescription:
-    "Natural-looking dermal fillers in Milton Keynes by a Registered Nurse Prescriber. Lips, cheeks, chin, jawline, tear trough and nose. From £100, free consultation, 25% off your first treatment.",
+    "Natural-looking dermal fillers in Milton Keynes by a Registered Nurse Prescriber. Lips, cheeks, chin, jawline, tear trough and nose. From £100, free consultation, up to 25% off your first treatment.",
   heroHeading: "Dermal Fillers in",
   heroHighlight: "Milton Keynes",
   heroIntro:
@@ -62,7 +62,7 @@ export const dermalFillersPage: TreatmentPageData = {
     { name: "Tear trough", price: "quoted at consultation" },
     { name: "Non-surgical rhinoplasty", price: "quoted at consultation" },
   ],
-  pricingNote: "Your first treatment is 25% off. Prices are starting prices; your exact quote is confirmed in your free consultation before any treatment.",
+  pricingNote: "Your first treatment could be up to 25% off. Prices are starting prices; your exact quote is confirmed in your free consultation before any treatment.",
   faq: [
     { question: "What areas can dermal fillers enhance?", answer: "Dermal fillers can enhance the lips, cheeks, chin, jawline, tear troughs (under-eyes), nose, nose-to-mouth lines, marionette lines and hands." },
     { question: "How long do results last?", answer: "Results can last anywhere from 6 months to 2 years depending on the area treated, the type of filler used and your own metabolism. Cheek filler typically lasts up to 18 months; lips around 6–12 months." },
