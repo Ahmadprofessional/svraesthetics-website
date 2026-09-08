@@ -1,0 +1,166 @@
+import type { TrainingCourse } from "@/types/training";
+
+export const trainingCourses: TrainingCourse[] = [
+  {
+    slug: "foundation-anti-wrinkle-course",
+    title: "Foundation Anti Wrinkle Course",
+    whoFor: "This is a combined practical and theory course designed for trained medics and aestheticians who want to expand their anti-wrinkle knowledge and treatments.",
+    entryRequirements:
+      "Nurses, Doctors, Pharmacists, Dental Nurses, Podiatrist, Radiologist's, Paramedic, Occupational Therapist, Beauty therapist, SPMU practitioner with 6 months+, Level 3 Beauty Principles in Aesthetics or NVQ Level 3 Beauty therapy or equivalent. You must have clinical oversight in place to conclude this course, and work with a prescribing healthcare professional to prescribe products for Anti-Wrinkle Treatments as they are a prescription-only medicine (POM).",
+    overview: [
+      "This course gives you all the knowledge and practical skills needed to perform anti-wrinkle treatments. You'll boost your confidence in product knowledge, treatment areas, injection techniques and live model practice.",
+      "The initial training is completed online from the comfort of your own workplace or home, covering a wide range of modules including the anatomy and physiology of the face and skin.",
+      "This course will teach you how to assess the musculature structure and anatomy of the face to determine the individual treatment plan per client, along with current trends and reconstitution of toxins.",
+      "After successful completion of the online course, you'll join an expert practitioner for further online theory training, followed by practical training at the Cosmetic Couture Academy on live models, resulting in fully accredited CPD certification.",
+    ],
+    theory: [
+      "Anatomical structure of the skin",
+      "Muscles of the face",
+      "Full Facial Musculature Assessment",
+      "Product Knowledge",
+      "Treatment Areas",
+      "Managing expectations",
+      "Pain management protocols",
+      "Adverse effects",
+      "Client consultation protocols (medical history & client consent)",
+      "Hygiene and sharps disposal and legal aspects",
+    ],
+    practical: ["Practice of injections on prosthetic skin", "Live demonstrations", "3 Practical Live Models"],
+    duration: "35 hours pre-study, online theory with 1-day inhouse training",
+  },
+  {
+    slug: "first-aid-anaphylaxis-training-milton-keynes",
+    title: "First Aid & Anaphylaxis Training",
+    whoFor:
+      "The First Aid and Anaphylaxis course is an online programme designed to give you the theoretical knowledge needed to work in the aesthetics industry, and is an excellent general First Aid Training package for everyday life.",
+    overview: [
+      "The First Aid and Anaphylaxis course does not seek to replace the practical element, but allows you to complete the online training at a time and place to suit you.",
+      "It will cover the basics of first aid in a variety of scenarios and teach students how to recognise and treat anaphylaxis.",
+    ],
+    theory: [
+      "General First Aid",
+      "External Bleeding",
+      "Allergic Reactions and Anaphylaxis",
+      "Eye Injury",
+      "Recovery Position",
+      "CPR",
+      "Medicine Interactions",
+      "Hepatitis B Virus",
+      "Pre-Study Feedback Form",
+    ],
+    practical: [],
+    duration: "16 hours pre-study and online theory (ACPB Members renewal £99)",
+  },
+  {
+    slug: "advanced-dermal-filler",
+    title: "Advanced Dermal Filler – Tear Trough and Non-Surgical Rhinoplasty",
+    whoFor: "This advanced dermal filler course has been created for aesthetic practitioners who want to focus on the tear trough area and non-surgical rhinoplasty.",
+    entryRequirements: "To study this course students must be able to demonstrate a proficiency in foundation dermal fillers.",
+    overview: [
+      "During this course, students will learn how to deliver professional Tear Trough treatments using the cannula method, which holds several advantages over needles — it is more flexible and creates less bruising and swelling for the client.",
+      "Students will also learn how to deliver non-surgical Rhinoplasty treatments via needle, carefully placing small amounts of dermal fillers to contour areas of the nose for a subtle yet enhanced look with minimal downtime.",
+      "Students start with online training modules from home, followed by practical training at the Cosmetic Couture Academy on live models, resulting in fully accredited CPD certification.",
+    ],
+    theory: [
+      "Facial proportions and the ageing process",
+      "Treatment areas",
+      "Filler depths",
+      "Product knowledge",
+      "Managing expectations",
+      "Injection techniques specific to cannula",
+      "Complications",
+      "Client suitability and consultation",
+      "Hygiene, sharps disposal and legal aspects",
+    ],
+    practical: ["Injection techniques", "Live demonstrations", "3 live models (1 Tear Trough, 2 Rhinoplasty)"],
+    treatmentAreas: ["Tear Troughs", "Nose"],
+    duration: "21 hours pre-study with 1-day inhouse training",
+  },
+  {
+    slug: "lip-masterclass-milton-keynes",
+    title: "Lip Filler Masterclass",
+    whoFor:
+      "The Lip Masterclass is designed for aestheticians who want to know more about the art of lip enhancement, covering signature lip styles like BStung®, Doll Lip®, HD Lip, Microdroplets and Tenting.",
+    entryRequirements: "To study the Lip Masterclass course, students must have successfully completed the Foundation Dermal Filler course first.",
+    overview: [
+      "Cosmetic Couture has been trailblazing in the UK aesthetics industry since 2014 with its signature lip styles, created a year before lip fillers became a mainstream media topic.",
+      "Today the masterclasses still teach students bespoke techniques to create popular celebrity looks, helping students stand out from their competitors.",
+    ],
+    theory: [
+      "Product knowledge",
+      "Assessing client suitability",
+      "Advanced injection techniques",
+      "Managing expectations",
+      "Managing complications",
+      "Client consultation & aftercare",
+      "Hygiene, sharps disposal and legal aspects",
+    ],
+    practical: ["Injection techniques", "Live demonstrations", "3 live models"],
+    duration: "1 day inhouse training",
+  },
+  {
+    slug: "foundation-dermal-fillers",
+    title: "Foundation Dermal Fillers",
+    whoFor: "The Foundation Dermal Filler course is designed for trained medics or qualified practitioners who want to expand their knowledge and services.",
+    entryRequirements:
+      "Trained medics including nurses, Doctors, Pharmacist, Dental Nurses, Podiatrist, Radiologist's, Paramedics, Occupational Therapists, Beauty therapists, SPMU practitioners with 6 months+, or practitioners with a Level 3.",
+    overview: [
+      "This CPD Standards Accredited course gives you the knowledge, confidence, and practical skills needed to perform professional dermal filler treatments, focusing on the lower third of the face including the lips.",
+      "You'll learn the structure of hyaluronic acid, treatment procedures, client consultations, and injection techniques, starting with online training covering the anatomy and physiology of the face and skin.",
+      "Finally, you will attend practical training at the accredited Cosmetic Couture Academy, learning practical skills on live models overseen by your expert tutor, resulting in fully accredited CPD certification.",
+    ],
+    theory: [
+      "Anatomy and physiology of the skin and lower face and signs of ageing",
+      "Hyaluronic acid (HA)",
+      "Product knowledge",
+      "Pre and post treatment procedures",
+      "Client consultation protocols (medical history & client consent)",
+      "Managing expectations and complaints procedure",
+      "Treatment areas and injection techniques",
+      "Pain management protocols",
+      "Hygiene, sharps disposal and legal aspects",
+    ],
+    practical: ["Live demonstrations and 4 live models"],
+    duration: "35 hours pre-study, online theory with 2 days inhouse training",
+  },
+  {
+    slug: "anatomy-physiology-of-the-face",
+    title: "Anatomy & Physiology of the Face",
+    whoFor: "The AQUA Certification in Anatomy, Physiology and Pathology for Complementary Therapies is a knowledge-based certification designed for non-medics working towards a career in the Beauty and Aesthetics industry.",
+    overview: [
+      "During this course students will discover the principles of anatomy, physiology and pathology of the human body, including the structure and inner workings of cells, skin, hair, skeleton, muscles, and nerves.",
+      "You'll also learn about the systems working to keep the body healthy, including circulatory, lymphatic, respiratory, endocrine, digestive, urinary and reproductive systems.",
+      "The course covers common diseases and disorders, giving students the knowledge to identify conditions and the appropriate course of action to treat clients effectively.",
+    ],
+    theory: [],
+    practical: [],
+    duration: "21 hours pre-study with online theory",
+  },
+  {
+    slug: "advanced-anti-wrinkle",
+    title: "Advanced Anti Wrinkle Course",
+    whoFor: "The advanced anti-wrinkle course is designed for trained aestheticians and medical professionals who want to increase their knowledge and skills in anti-wrinkle treatments.",
+    entryRequirements: "This course is a suitable progression for students who have completed the foundation anti-wrinkle course.",
+    overview: [
+      "Our advanced Anti-Wrinkle course expands on product knowledge, highlighting all the ways we can use the toxin in different treatments, focusing on 13 key treatment areas.",
+      "The initial online training can be completed from home, teaching and testing your understanding on a range of modules to give a detailed understanding of these advanced techniques.",
+      "The final phase is a practical training module at the Cosmetic Couture Academy on live models, overseen by your expert tutor, resulting in fully accredited CPD certification.",
+    ],
+    theory: [
+      "Mimetic muscles",
+      "Muscle names, groups and types",
+      "Branching nerves of the face",
+      "Aftercare",
+      "Managing expectations",
+      "Client consultation protocols (medical history & client consent)",
+      "Hygiene, sharps disposal and legal aspects",
+    ],
+    practical: ["Injection techniques", "Live demonstrations", "2 Practical Live Models"],
+    treatmentAreas: ["Brow Lift", "Bunny Lines", "Lip Lines", "Marionettes", "Nasal Tip Lift", "Gummy Smile", "Flip Lip", "Chin Dimpling", "Masseters", "Neck bands", "Nefertiti neck lift", "Feminisation", "Bruxism"],
+    duration: "21 hours pre-study with theory online and 1-day inhouse training",
+  },
+];
+
+export function getTrainingBySlug(slug: string) {
+  return trainingCourses.find((c) => c.slug === slug);
+}
