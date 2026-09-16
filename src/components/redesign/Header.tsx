@@ -85,12 +85,12 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <a
-              href="#book"
+            <Link
+              href="/book-free-consultation"
               className="hidden items-center rounded-full bg-plum px-5 py-2.5 text-[14px] font-semibold text-white shadow-[0_10px_24px_-12px_rgba(75,42,99,0.8)] transition-all hover:-translate-y-0.5 hover:bg-plum-deep sm:inline-flex"
             >
               Book Free Consultation
-            </a>
+            </Link>
             <button
               onClick={() => setOpen(true)}
               className="flex size-11 items-center justify-center rounded-full border border-sand text-ink lg:hidden"
@@ -198,9 +198,9 @@ export function Header() {
           </nav>
 
           <div className="border-t border-sand p-5">
-            <a href="#book" onClick={() => setOpen(false)} className="block rounded-full bg-plum px-5 py-3.5 text-center font-semibold text-white">
+            <Link href="/book-free-consultation" onClick={() => setOpen(false)} className="block rounded-full bg-plum px-5 py-3.5 text-center font-semibold text-white">
               Book Free Consultation
-            </a>
+            </Link>
             <a href={siteInfo.phoneHref} className="mt-3 flex items-center justify-center gap-2 rounded-full border border-plum px-5 py-3.5 font-semibold text-plum">
               <Phone className="size-4" /> {siteInfo.phone}
             </a>

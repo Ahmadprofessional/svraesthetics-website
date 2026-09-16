@@ -65,6 +65,7 @@ const legacyRedirects: Record<string, string> = {
 };
 
 const nextConfig: NextConfig = {
+  devIndicators: false,
   images: {
     remotePatterns: [{ protocol: "https", hostname: "svraesthetics.co.uk" }],
   },
@@ -75,6 +76,10 @@ const nextConfig: NextConfig = {
       { source: "/category/:path*", destination: "/blogs", permanent: true },
       { source: "/tag/:path*", destination: "/blogs", permanent: true },
       { source: "/author/:path*", destination: "/blogs", permanent: true },
+      { source: "/book", destination: "/book-free-consultation", permanent: true },
+      { source: "/book-appointment", destination: "/book-free-consultation", permanent: true },
+      { source: "/booking", destination: "/book-free-consultation", permanent: true },
+      { source: "/appointments", destination: "/book-free-consultation", permanent: true },
     ];
   },
 };
