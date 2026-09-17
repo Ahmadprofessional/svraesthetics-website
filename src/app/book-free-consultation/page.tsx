@@ -3,6 +3,7 @@ import { ShieldCheck } from "lucide-react";
 import { Shell } from "@/components/redesign/Shell";
 import { PageHero } from "@/components/redesign/PageHero";
 import { BookingCta } from "@/components/redesign/BookingCta";
+import { BookingEmbed } from "@/components/BookingEmbed";
 import { Reviews } from "@/components/redesign/Reviews";
 
 export const metadata: Metadata = {
@@ -34,7 +35,8 @@ export default function BookPage() {
         </ol>
         <p className="mt-6 flex items-center gap-2 text-[13px] text-muted-ink"><ShieldCheck className="size-4 text-plum" /> Treatments available to clients aged 18 and over.</p>
       </PageHero>
-      <BookingCta />
+      <BookingEmbed />
+      <BookingCta source="book-page-callback" />
       <Reviews />
     </Shell>
   );

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@/components/Analytics";
+import { ChatWidget } from "@/components/ChatWidget";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-display",
@@ -18,13 +19,13 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://svraesthetics.co.uk"),
-  title: "Injectables & Facials in Milton Keynes | SVR Aesthetics",
+  title: "SVR Aesthetics | Aesthetic & Skin Clinic Milton Keynes",
   description:
-    "Nurse-led aesthetic clinic in Bletchley, Milton Keynes. Natural-looking anti-wrinkle injections, dermal fillers, lip enhancement, HydraFacial, microneedling and chemical peels. Free consultation, up to 25% off your first treatment.",
+    "Nurse-led aesthetic and skin clinic in Bletchley, Milton Keynes led by Sonali, Registered Nurse Prescriber. Natural-looking anti-wrinkle injections, dermal fillers, lip enhancement, HydraFacial, microneedling and chemical peels.",
   openGraph: {
-    title: "SVR Aesthetics — Injectables & Facials, Milton Keynes",
+    title: "SVR Aesthetics — Aesthetic & Skin Clinic Milton Keynes",
     description:
-      "Natural-looking injectables and advanced facials by a Registered Nurse Prescriber. Free consultation in Bletchley, Milton Keynes.",
+      "Nurse-led aesthetic and skin clinic in Milton Keynes by Sonali, Registered Nurse Prescriber. High quality skin care services with top priority on safety and satisfaction.",
     images: ["/images/redesign/hero.webp"],
     locale: "en_GB",
     type: "website",
@@ -33,9 +34,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-GB" className={`${cormorant.variable} ${manrope.variable} h-full antialiased scroll-smooth`}>
-      <body className="min-h-full flex flex-col font-body bg-ivory text-ink">
+    <html lang="en-GB" suppressHydrationWarning className={`${cormorant.variable} ${manrope.variable} h-full antialiased scroll-smooth`}>
+      <body suppressHydrationWarning className="min-h-full flex flex-col font-body bg-ivory text-ink">
         {children}
+        <ChatWidget />
         <Analytics />
       </body>
     </html>
