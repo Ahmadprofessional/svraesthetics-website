@@ -7,6 +7,7 @@ import { ChevronDown, Menu, Phone, X, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { siteInfo } from "@/data/site";
 import { treatmentGroups, trainingGroup, primaryLinks, utilityLinks } from "@/data/nav";
+import { trackContactClick } from "@/lib/leads";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -51,11 +52,11 @@ export function Header() {
                 {l.label}
               </Link>
             ))}
-            <a href={siteInfo.phoneHref} className="flex items-center gap-2 font-semibold">
+            <a id="header-phone-desktop" href={siteInfo.phoneHref} onClick={() => trackContactClick("call")} className="gtm-phone-link flex items-center gap-2 font-semibold">
               <Phone className="size-3.5" /> {siteInfo.phone}
             </a>
           </div>
-          <a href={siteInfo.phoneHref} className="flex shrink-0 items-center gap-2 font-semibold lg:hidden">
+          <a id="header-phone-mobile-bar" href={siteInfo.phoneHref} onClick={() => trackContactClick("call")} className="gtm-phone-link flex shrink-0 items-center gap-2 font-semibold lg:hidden">
             <Phone className="size-3.5" /> {siteInfo.phone}
           </a>
         </div>
@@ -86,8 +87,9 @@ export function Header() {
 
           <div className="flex items-center gap-2">
             <Link
+              id="header-book-btn-desktop"
               href="/book-free-consultation"
-              className="hidden items-center rounded-full bg-plum px-5 py-2.5 text-[14px] font-semibold text-white shadow-[0_10px_24px_-12px_rgba(75,42,99,0.8)] transition-all hover:-translate-y-0.5 hover:bg-plum-deep sm:inline-flex"
+              className="gtm-book-nav-btn hidden items-center rounded-full bg-plum px-5 py-2.5 text-[14px] font-semibold text-white shadow-[0_10px_24px_-12px_rgba(75,42,99,0.8)] transition-all hover:-translate-y-0.5 hover:bg-plum-deep sm:inline-flex"
             >
               Book Free Consultation
             </Link>
@@ -198,10 +200,10 @@ export function Header() {
           </nav>
 
           <div className="border-t border-sand p-5">
-            <Link href="/book-free-consultation" onClick={() => setOpen(false)} className="block rounded-full bg-plum px-5 py-3.5 text-center font-semibold text-white">
+            <Link id="header-book-btn-mobile" href="/book-free-consultation" onClick={() => setOpen(false)} className="gtm-book-nav-btn block rounded-full bg-plum px-5 py-3.5 text-center font-semibold text-white">
               Book Free Consultation
             </Link>
-            <a href={siteInfo.phoneHref} className="mt-3 flex items-center justify-center gap-2 rounded-full border border-plum px-5 py-3.5 font-semibold text-plum">
+            <a id="header-phone-mobile-menu" href={siteInfo.phoneHref} onClick={() => trackContactClick("call")} className="gtm-phone-link mt-3 flex items-center justify-center gap-2 rounded-full border border-plum px-5 py-3.5 font-semibold text-plum">
               <Phone className="size-4" /> {siteInfo.phone}
             </a>
           </div>

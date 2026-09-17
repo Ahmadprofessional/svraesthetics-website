@@ -6,7 +6,7 @@ import Link from "next/link";
 import { ArrowRight, ChevronRight, Phone, ShieldCheck, Star } from "lucide-react";
 import type { TreatmentPageData } from "@/types/treatment-page";
 import { siteInfo } from "@/data/site";
-import { submitLead, trackContactClick } from "@/lib/leads";
+import { submitLead, trackContactClick, pushToDataLayer } from "@/lib/leads";
 
 export function RatingBadge({ dark = false }: { dark?: boolean }) {
   return (
@@ -35,6 +35,12 @@ export function CallbackForm({ treatmentName, source }: { treatmentName: string;
     });
     if (res.ok) {
       setStatus("sent");
+      pushToDataLayer({
+        event: "booking_form_submit",
+        form_id: "treatment-callback-form",
+        treatment: treatmentName,
+        lead_source: source,
+      });
       form.reset();
     } else {
       setStatus("error");
@@ -43,7 +49,7 @@ export function CallbackForm({ treatmentName, source }: { treatmentName: string;
   }
 
   return (
-    <form onSubmit={onSubmit} className="relative -mt-10 mx-4 rounded-2xl bg-white p-5 shadow-[0_30px_60px_-30px_rgba(43,37,48,0.45)] sm:mx-6">
+    <form id="treatment-callback-form" onSubmit={onSubmit} className="gtm-lead-form relative -mt-10 mx-4 rounded-2xl bg-white p-5 shadow-[0_30px_60px_-30px_rgba(43,37,48,0.45)] sm:mx-6">
       <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
       <div className="flex items-center justify-between gap-3">
         <p className="font-display text-2xl text-ink">Request a call back</p>
@@ -53,7 +59,7 @@ export function CallbackForm({ treatmentName, source }: { treatmentName: string;
         <input name="name" required placeholder="Your name" aria-label="Your name" className="rounded-xl border border-sand px-4 py-3 text-[14px] outline-none focus:border-plum" />
         <input name="phone" type="tel" required placeholder="Phone number" aria-label="Phone number" className="rounded-xl border border-sand px-4 py-3 text-[14px] outline-none focus:border-plum" />
       </div>
-      <button type="submit" disabled={status === "sending"} className="mt-3 w-full rounded-full bg-plum py-3.5 text-[14px] font-semibold text-white transition-colors hover:bg-plum-deep disabled:opacity-60">
+      <button id="treatment-callback-submit" type="submit" disabled={status === "sending"} className="gtm-callback-submit mt-3 w-full rounded-full bg-plum py-3.5 text-[14px] font-semibold text-white transition-colors hover:bg-plum-deep disabled:opacity-60">
         {status === "sending" ? "Sending…" : `Book my free ${treatmentName.toLowerCase()} consultation`}
       </button>
       {status === "sent" && <p className="mt-3 text-center text-[13px] font-medium text-plum" role="status">Thank you — we&apos;ll call you shortly.</p>}
@@ -92,7 +98,7 @@ export function TreatmentHero({ page }: { page: TreatmentPageData }) {
               <a href="#book" className="group inline-flex items-center justify-center gap-2 rounded-full bg-plum px-7 py-4 text-[15px] font-semibold text-white shadow-[0_18px_40px_-16px_rgba(75,42,99,0.9)] transition-all hover:-translate-y-0.5 hover:bg-plum-deep">
                 Book your free consultation <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
               </a>
-              <a href={siteInfo.phoneHref} onClick={() => trackContactClick("call")} className="inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 bg-white/60 px-7 py-4 text-[15px] font-semibold text-ink backdrop-blur transition-colors hover:border-plum hover:text-plum">
+              <a id="hero-phone-link" href={siteInfo.phoneHref} onClick={() => trackContactClick("call")} className="gtm-phone-link inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 bg-white/60 px-7 py-4 text-[15px] font-semibold text-ink backdrop-blur transition-colors hover:border-plum hover:text-plum">
                 <Phone className="size-4" /> {siteInfo.phone}
               </a>
             </div>

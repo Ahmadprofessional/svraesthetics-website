@@ -11,13 +11,22 @@ export interface LeadInput {
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
-    dataLayer?: unknown[];
+    dataLayer?: Array<Record<string, unknown>>;
   }
+}
+
+/**
+ * Safely push standard events to Google Tag Manager dataLayer
+ */
+export function pushToDataLayer(payload: Record<string, unknown>) {
+  if (typeof window === "undefined") return;
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(payload);
 }
 
 export function trackConversion(source: string) {
   if (typeof window === "undefined") return;
-  window.dataLayer?.push({ event: "generate_lead", lead_source: source });
+  pushToDataLayer({ event: "generate_lead", lead_source: source });
   if (window.gtag) {
     window.gtag("event", "generate_lead", { lead_source: source });
     const label = process.env.NEXT_PUBLIC_GADS_CONVERSION_LABEL;
@@ -28,7 +37,10 @@ export function trackConversion(source: string) {
 
 export function trackContactClick(kind: "call" | "whatsapp") {
   if (typeof window === "undefined") return;
-  window.dataLayer?.push({ event: `${kind}_click` });
+  const eventName = kind === "call" ? "phone_click" : "whatsapp_click";
+  pushToDataLayer({ event: eventName, contact_method: kind });
+  // Also push {kind}_click for backwards compatibility
+  pushToDataLayer({ event: `${kind}_click` });
   window.gtag?.("event", `${kind}_click`);
 }
 

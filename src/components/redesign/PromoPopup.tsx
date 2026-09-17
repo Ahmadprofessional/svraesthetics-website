@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { X, ShieldCheck } from "lucide-react";
-import { submitLead } from "@/lib/leads";
+import { submitLead, pushToDataLayer } from "@/lib/leads";
 import { siteInfo } from "@/data/site";
 
 const STORAGE_KEY = "svr-promo-dismissed";
@@ -53,6 +53,11 @@ export function PromoPopup({ delayMs = 6000 }: { delayMs?: number }) {
     });
     if (res.ok) {
       setStatus("sent");
+      pushToDataLayer({
+        event: "popup_form_submit",
+        form_id: "promo-popup-form",
+        lead_source: "promo-popup",
+      });
       setTimeout(close, 2500);
     } else {
       setStatus("error");
@@ -89,12 +94,12 @@ export function PromoPopup({ delayMs = 6000 }: { delayMs?: number }) {
           {status === "sent" ? (
             <p className="mt-6 rounded-2xl bg-plum-soft px-5 py-4 text-[15px] font-medium text-plum" role="status">Thank you — your offer is reserved. We&apos;ll be in touch shortly.</p>
           ) : (
-            <form onSubmit={onSubmit} className="mt-6 space-y-3">
+            <form id="promo-popup-form" onSubmit={onSubmit} className="gtm-popup-form mt-6 space-y-3">
               <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
               <input name="name" required placeholder="Name" aria-label="Name" className="w-full rounded-xl border border-sand bg-white px-4 py-3 text-[14px] outline-none focus:border-plum" />
               <input name="email" type="email" placeholder="Email" aria-label="Email" className="w-full rounded-xl border border-sand bg-white px-4 py-3 text-[14px] outline-none focus:border-plum" />
               <input name="phone" type="tel" required placeholder="Phone" aria-label="Phone" className="w-full rounded-xl border border-sand bg-white px-4 py-3 text-[14px] outline-none focus:border-plum" />
-              <button type="submit" disabled={status === "sending"} className="w-full rounded-full bg-plum py-3.5 text-[15px] font-semibold text-white hover:bg-plum-deep disabled:opacity-60">
+              <button id="promo-popup-submit" type="submit" disabled={status === "sending"} className="gtm-popup-submit w-full rounded-full bg-plum py-3.5 text-[15px] font-semibold text-white hover:bg-plum-deep disabled:opacity-60">
                 {status === "sending" ? "Sending…" : "Claim my discount"}
               </button>
               {status === "error" && <p className="text-[13px] font-medium text-ink" role="alert">{error} Call {siteInfo.phone}.</p>}

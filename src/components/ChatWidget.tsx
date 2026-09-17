@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
+import { trackContactClick } from "@/lib/leads";
 
 interface Message {
   role: "user" | "assistant";
@@ -618,7 +619,10 @@ export function ChatWidget() {
             }}
           >
             <a
+              id="chat-widget-phone-link"
               href="tel:07792284575"
+              onClick={() => trackContactClick("call")}
+              className="gtm-phone-link"
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -646,9 +650,11 @@ export function ChatWidget() {
             </a>
             <span style={{ color: "#e9e0d4", fontSize: 14 }}>|</span>
             <a
+              id="chat-widget-book-link"
               href="https://svraesthetics.co.uk/book-free-consultation/"
               target="_blank"
               rel="noopener noreferrer"
+              className="gtm-book-link"
               style={{
                 display: "flex",
                 alignItems: "center",

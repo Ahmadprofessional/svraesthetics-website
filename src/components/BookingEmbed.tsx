@@ -53,10 +53,11 @@ export function BookingEmbed() {
               Secure booking powered by ClinicConsent / AestheticOS
             </span>
             <a
+              id="embed-external-booking-link"
               href="https://clinicconsent.com/book/svr-aesthetics"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-plum font-semibold hover:underline"
+              className="gtm-booking-external-link inline-flex items-center gap-1 text-plum font-semibold hover:underline"
             >
               Open booking in new tab
               <ExternalLink className="size-3.5" />
@@ -72,19 +73,21 @@ export function BookingEmbed() {
           </div>
           <div className="flex items-center gap-3 shrink-0">
             <a
+              id="embed-phone-link"
               href={siteInfo.phoneHref}
               onClick={() => trackContactClick("call")}
-              className="inline-flex items-center gap-2 rounded-full border border-sand bg-cream/50 px-4 py-2 text-[13px] font-semibold text-ink hover:bg-cream transition-colors"
+              className="gtm-phone-link inline-flex items-center gap-2 rounded-full border border-sand bg-cream/50 px-4 py-2 text-[13px] font-semibold text-ink hover:bg-cream transition-colors"
             >
               <Phone className="size-3.5 text-plum" />
               Call {siteInfo.phone}
             </a>
             <a
+              id="embed-whatsapp-link"
               href="https://wa.me/447792284575"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackContactClick("whatsapp")}
-              className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-2 text-[13px] font-semibold text-white hover:bg-[#20bd5a] transition-colors"
+              className="gtm-whatsapp-link inline-flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-2 text-[13px] font-semibold text-white hover:bg-[#20bd5a] transition-colors"
             >
               <MessageCircle className="size-3.5 fill-current" />
               WhatsApp

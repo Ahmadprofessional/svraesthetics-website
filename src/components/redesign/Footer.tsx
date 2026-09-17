@@ -21,7 +21,7 @@ export function Footer() {
         <div>
           <h4 className="text-[12px] font-semibold uppercase tracking-[0.2em] text-plum">Find us</h4>
           <p className="mt-4 text-[14px] leading-relaxed text-muted-ink">{siteInfo.address}</p>
-          <a href={siteInfo.phoneHref} className="mt-3 block text-[14px] font-semibold text-ink">{siteInfo.phone}</a>
+          <a id="footer-phone-link" href={siteInfo.phoneHref} className="gtm-phone-link mt-3 block text-[14px] font-semibold text-ink">{siteInfo.phone}</a>
           <a href={`mailto:${siteInfo.email}`} className="block text-[14px] text-muted-ink">{siteInfo.email}</a>
         </div>
       </div>

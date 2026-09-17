@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Check, Phone, ShieldCheck } from "lucide-react";
@@ -11,6 +13,7 @@ import { BookingCta } from "@/components/redesign/BookingCta";
 import { Accordion } from "@/components/Accordion";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Star } from "lucide-react";
+import { trackContactClick } from "@/lib/leads";
 
 const trust = ["Registered Nurse Prescriber", "15+ years NHS experience", "100s of treatments every year", "Free consultation · Up to 25% off first treatment"];
 
@@ -24,11 +27,24 @@ export function LandingPage({ page }: { page: LandingPageData }) {
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
           <Image src="/images/logo.png" alt="SVR Aesthetics" width={110} height={58} priority className="h-12 w-auto" />
           <div className="flex items-center gap-2">
-            <a href={siteInfo.phoneHref} className="hidden items-center gap-2 rounded-full border border-sand px-4 py-2.5 text-[14px] font-semibold text-ink sm:flex">
+            <a
+              id="landing-header-phone-desktop"
+              href={siteInfo.phoneHref}
+              onClick={() => trackContactClick("call")}
+              className="gtm-phone-link hidden items-center gap-2 rounded-full border border-sand px-4 py-2.5 text-[14px] font-semibold text-ink sm:flex"
+            >
               <Phone className="size-4 text-plum" /> {siteInfo.phone}
             </a>
-            <a href={siteInfo.phoneHref} className="flex size-11 items-center justify-center rounded-full border border-sand text-plum sm:hidden" aria-label="Call us"><Phone className="size-4" /></a>
-            <a href="#book" className="rounded-full bg-plum px-5 py-2.5 text-[14px] font-semibold text-white hover:bg-plum-deep">Book free consultation</a>
+            <a
+              id="landing-header-phone-mobile"
+              href={siteInfo.phoneHref}
+              onClick={() => trackContactClick("call")}
+              className="gtm-phone-link flex size-11 items-center justify-center rounded-full border border-sand text-plum sm:hidden"
+              aria-label="Call us"
+            >
+              <Phone className="size-4" />
+            </a>
+            <a id="landing-header-book-btn" href="#book" className="gtm-book-btn rounded-full bg-plum px-5 py-2.5 text-[14px] font-semibold text-white hover:bg-plum-deep">Book free consultation</a>
           </div>
         </div>
       </header>
@@ -58,8 +74,8 @@ export function LandingPage({ page }: { page: LandingPageData }) {
                 ))}
               </ul>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a href="#book" className="inline-flex items-center justify-center rounded-full bg-plum px-7 py-4 text-[15px] font-semibold text-white shadow-[0_18px_40px_-16px_rgba(75,42,99,0.9)] hover:bg-plum-deep">Book your free consultation</a>
-                <a href={siteInfo.phoneHref} className="inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 bg-white/60 px-7 py-4 text-[15px] font-semibold text-ink hover:border-plum hover:text-plum"><Phone className="size-4" /> Call {siteInfo.phone}</a>
+                <a id="landing-hero-book-btn" href="#book" className="gtm-book-btn inline-flex items-center justify-center rounded-full bg-plum px-7 py-4 text-[15px] font-semibold text-white shadow-[0_18px_40px_-16px_rgba(75,42,99,0.9)] hover:bg-plum-deep">Book your free consultation</a>
+                <a id="landing-hero-phone-link" href={siteInfo.phoneHref} onClick={() => trackContactClick("call")} className="gtm-phone-link inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 bg-white/60 px-7 py-4 text-[15px] font-semibold text-ink hover:border-plum hover:text-plum"><Phone className="size-4" /> Call {siteInfo.phone}</a>
               </div>
             </div>
             <div className="relative">

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { pushToDataLayer } from "@/lib/leads";
 
 export function PromoModal() {
   const [open, setOpen] = useState(false);
@@ -44,16 +45,18 @@ export function PromoModal() {
             First Treatment
           </p>
           <form
-            className="mt-2 w-full max-w-xs space-y-3"
+            id="promo-modal-form"
+            className="gtm-popup-form mt-2 w-full max-w-xs space-y-3"
             onSubmit={(e) => {
               e.preventDefault();
+              pushToDataLayer({ event: "popup_form_submit", form_id: "promo-modal-form" });
               close();
             }}
           >
             <Input placeholder="Name:" className="bg-white text-brand-heading" />
             <Input placeholder="Email:*" type="email" required className="bg-white text-brand-heading" />
             <Input placeholder="Phone:*" type="tel" required className="bg-white text-brand-heading" />
-            <Button type="submit" className="w-full bg-black text-white hover:bg-black/80">
+            <Button id="promo-modal-submit" type="submit" className="gtm-popup-submit w-full bg-black text-white hover:bg-black/80">
               Sign Me Up!
             </Button>
           </form>

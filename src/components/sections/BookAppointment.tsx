@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/Reveal";
+import { pushToDataLayer } from "@/lib/leads";
 
 const trafficResources = ["Google Ads", "Google Search", "AI Search"];
 
@@ -54,10 +55,12 @@ export function BookAppointment() {
 
           <Reveal delay={120}>
             <form
-              className="space-y-5 rounded-2xl bg-white p-6 shadow-sm sm:p-8"
+              id="book-appointment-form"
+              className="gtm-lead-form space-y-5 rounded-2xl bg-white p-6 shadow-sm sm:p-8"
               onSubmit={(e) => {
                 e.preventDefault();
                 setSubmitted(true);
+                pushToDataLayer({ event: "contact_form_submit", form_id: "book-appointment-form" });
               }}
             >
               <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">

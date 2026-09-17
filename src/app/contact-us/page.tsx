@@ -20,7 +20,7 @@ export default function ContactPage() {
         intro="Call, WhatsApp, email or use the form — whichever is easiest. We reply quickly during clinic hours and can usually book you in within days."
         crumbs={[{ label: "Contact Us" }]}
       />
-      <BookingCta />
+      <BookingCta source="contact-page" />
       <section className="bg-ivory">
         <iframe
           title="SVR Aesthetics on Google Maps — Unit 2, Stainer Square Centre, Queensway, Bletchley, Milton Keynes MK2 2FY"

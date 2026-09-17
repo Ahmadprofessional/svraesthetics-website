@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Clock, Mail, MapPin, Phone, Star, Calendar, MessageSquare, ExternalLink, Sparkles } from "lucide-react";
 import { siteInfo } from "@/data/site";
 import { WhatsAppIcon } from "@/components/icons";
-import { submitLead, trackContactClick } from "@/lib/leads";
+import { submitLead, trackContactClick, pushToDataLayer } from "@/lib/leads";
 
 const treatmentsOfInterest = ["Anti-Wrinkle", "Dermal Fillers", "Lip Enhancement", "HydraFacial", "Microneedling", "Chemical Peel", "Not sure yet"];
 
@@ -29,6 +29,12 @@ export function BookingCta({ source = "booking-section" }: { source?: string }) 
     });
     if (res.ok) {
       setStatus("sent");
+      // Push standard GTM event based on form context
+      if (source.includes("contact")) {
+        pushToDataLayer({ event: "contact_form_submit", form_id: "booking-callback-form", lead_source: source });
+      } else {
+        pushToDataLayer({ event: "booking_form_submit", form_id: "booking-callback-form", lead_source: source });
+      }
       form.reset();
     } else {
       setStatus("error");
@@ -94,10 +100,11 @@ export function BookingCta({ source = "booking-section" }: { source?: string }) 
                 Live Real-Time Availability
               </span>
               <a
+                id="instant-tab-external-link"
                 href="https://clinicconsent.com/book/svr-aesthetics"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 font-semibold text-plum hover:underline"
+                className="gtm-booking-external-link inline-flex items-center gap-1 font-semibold text-plum hover:underline"
               >
                 Open in new window
                 <ExternalLink className="size-3.5" />
@@ -117,7 +124,7 @@ export function BookingCta({ source = "booking-section" }: { source?: string }) 
             <div className="mt-4 pt-3 border-t border-sand/60 flex flex-col sm:flex-row items-center justify-between gap-2 text-[12px] text-muted-ink">
               <span>Secure booking powered by ClinicConsent / AestheticOS</span>
               <span className="flex items-center gap-1">
-                Prefer to call? <a href={siteInfo.phoneHref} className="text-plum font-semibold hover:underline">{siteInfo.phone}</a>
+                Prefer to call? <a id="booking-instant-phone-link" href={siteInfo.phoneHref} onClick={() => trackContactClick("call")} className="gtm-phone-link text-plum font-semibold hover:underline">{siteInfo.phone}</a>
               </span>
             </div>
           </div>
@@ -133,11 +140,11 @@ export function BookingCta({ source = "booking-section" }: { source?: string }) 
               </p>
 
               <div className="mt-8 space-y-4 text-[14px]">
-                <a href={siteInfo.phoneHref} onClick={() => trackContactClick("call")} className="flex items-center gap-3">
+                <a id="booking-cta-phone-link" href={siteInfo.phoneHref} onClick={() => trackContactClick("call")} className="gtm-phone-link flex items-center gap-3">
                   <span className="flex size-10 items-center justify-center rounded-full bg-ivory/10"><Phone className="size-4" /></span>
                   <span><span className="block text-[11px] uppercase tracking-wider text-ivory/60">Call</span>{siteInfo.phone}</span>
                 </a>
-                <a href="https://wa.me/447792284575" onClick={() => trackContactClick("whatsapp")} className="flex items-center gap-3">
+                <a id="booking-cta-whatsapp-link" href="https://wa.me/447792284575" onClick={() => trackContactClick("whatsapp")} className="gtm-whatsapp-link flex items-center gap-3">
                   <span className="flex size-10 items-center justify-center rounded-full bg-ivory/10"><WhatsAppIcon className="size-4" /></span>
                   <span><span className="block text-[11px] uppercase tracking-wider text-ivory/60">WhatsApp</span>Message us</span>
                 </a>
@@ -156,7 +163,7 @@ export function BookingCta({ source = "booking-section" }: { source?: string }) 
               </div>
             </div>
 
-            <form onSubmit={onSubmit} className="rounded-3xl bg-ivory p-6 text-ink shadow-[0_40px_80px_-40px_rgba(0,0,0,0.6)] sm:p-8">
+            <form id="booking-callback-form" onSubmit={onSubmit} className="gtm-lead-form rounded-3xl bg-ivory p-6 text-ink shadow-[0_40px_80px_-40px_rgba(0,0,0,0.6)] sm:p-8">
               <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <Field label="Name" name="name" required />
@@ -183,9 +190,10 @@ export function BookingCta({ source = "booking-section" }: { source?: string }) 
                 <textarea id="message" name="message" rows={3} className="mt-2 w-full rounded-xl border border-sand bg-white px-4 py-3 text-[14px] outline-none transition-colors focus:border-plum" />
               </div>
               <button
+                id="booking-callback-submit"
                 type="submit"
                 disabled={status === "sending"}
-                className="mt-6 w-full rounded-full bg-plum py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-plum-deep disabled:opacity-60"
+                className="gtm-booking-submit mt-6 w-full rounded-full bg-plum py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-plum-deep disabled:opacity-60"
               >
                 {status === "sending" ? "Sending…" : "Request my free consultation"}
               </button>
