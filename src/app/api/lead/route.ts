@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
+import { checkRateLimit } from "@/lib/rate-limit";
+
 const RECIPIENTS = (process.env.LEAD_RECIPIENTS ?? "Svraesthetics@gmail.com,Ahmadmumtazprofessional@gmail.com,svraesthetics84@gmail.com")
   .split(",")
   .map((s) => s.trim())
@@ -24,6 +26,12 @@ function esc(s: string) {
 }
 
 export async function POST(req: Request) {
+  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "127.0.0.1";
+  const rate = checkRateLimit(`lead_${ip}`, 8, 10 * 60 * 1000);
+  if (!rate.success) {
+    return NextResponse.json({ ok: false, error: "Too many requests. Please call or WhatsApp us directly." }, { status: 429 });
+  }
+
   let body: LeadPayload;
   try {
     body = await req.json();

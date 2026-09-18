@@ -83,8 +83,19 @@ Friendly, Professional, Short. Maximum 2-3 short sentences. No markdown. No bull
 
 IMPORTANT: Return ONLY a plain text reply. Do NOT use markdown formatting, bullet points, bold, or any special formatting. Just plain text sentences.`;
 
+import { checkRateLimit } from "@/lib/rate-limit";
+
 export async function POST(req: NextRequest) {
   try {
+    const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "127.0.0.1";
+    const rate = checkRateLimit(`chat_${ip}`, 20, 60 * 1000); // max 20 messages per min
+    if (!rate.success) {
+      return NextResponse.json(
+        { reply: "You've sent quite a few messages! Please give us a quick call or message on WhatsApp at 077 92284575." },
+        { status: 200 }
+      );
+    }
+
     const { messages } = await req.json();
 
     if (!messages || !Array.isArray(messages) || messages.length === 0) {
