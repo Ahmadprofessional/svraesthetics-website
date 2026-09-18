@@ -108,7 +108,7 @@ export const serviceCards: ServiceCard[] = [
     icon: "/images/service-blood-tests.jpg",
     heading: "Wellness Blood tests",
     text: "Comprehensive blood tests that provide insight into your overall health, nutrient levels, and wellbeing.",
-    href: "/milton-keynes-blood-test",
+    href: "/blood-tests",
   },
   {
     slug: "anti-wrinkle",
