@@ -30,15 +30,15 @@ export function Reveal({
 
     const isOnScreen = () => {
       const rect = el.getBoundingClientRect();
-      return rect.top < window.innerHeight && rect.bottom > 0;
+      return rect.top < window.innerHeight + 100 && rect.bottom > 0;
     };
 
-    // Primary: efficient, fires as the element crosses into the viewport.
+    // Primary: efficient, fires before the element crosses into the viewport so it is ready and animated smoothly.
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) reveal();
       },
-      { threshold: 0, rootMargin: "0px 0px -5% 0px" }
+      { threshold: 0, rootMargin: "0px 0px 100px 0px" }
     );
     observer.observe(el);
 
