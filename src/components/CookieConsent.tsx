@@ -151,7 +151,7 @@ export function CookieConsent() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="cookie-modal-title"
-            className="relative w-full max-w-xl rounded-3xl border border-sand bg-white p-6 sm:p-8 shadow-2xl animate-in zoom-in-95 duration-200"
+            className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-3xl border border-sand bg-white p-5 sm:p-7 shadow-2xl animate-in zoom-in-95 duration-200"
           >
             <div className="flex items-center justify-between border-b border-sand pb-4 mb-6">
               <div className="flex items-center gap-2.5">

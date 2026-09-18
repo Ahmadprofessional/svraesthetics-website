@@ -1,4 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#4b2a63",
+};
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@/components/Analytics";
