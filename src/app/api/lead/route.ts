@@ -25,6 +25,27 @@ function esc(s: string) {
   return s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c] ?? c);
 }
 
+async function triggerOutboundCall(lead: {
+  name: string;
+  phone: string;
+  email: string;
+  service_interest: string;
+  source: string;
+}) {
+  const webhookUrl = process.env.N8N_OUTBOUND_LEAD_WEBHOOK_URL;
+  if (!webhookUrl) return;
+  try {
+    await fetch(webhookUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...lead, submitted_at: new Date().toISOString() }),
+      signal: AbortSignal.timeout(4000),
+    });
+  } catch (err) {
+    console.error("[lead] outbound-call webhook failed", err);
+  }
+}
+
 export async function POST(req: Request) {
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "127.0.0.1";
   const rate = checkRateLimit(`lead_${ip}`, 8, 10 * 60 * 1000);
@@ -55,6 +76,8 @@ export async function POST(req: Request) {
   if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return NextResponse.json({ ok: false, error: "Please enter a valid email" }, { status: 400 });
   }
+
+  await triggerOutboundCall({ name, phone, email, service_interest: treatment, source });
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
