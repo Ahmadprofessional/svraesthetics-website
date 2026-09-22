@@ -1,8 +1,16 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#4b2a63",
+};
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@/components/Analytics";
 import { ChatWidget } from "@/components/ChatWidget";
+import { CookieConsent } from "@/components/CookieConsent";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-display",
@@ -22,6 +30,17 @@ export const metadata: Metadata = {
   title: "SVR Aesthetics | Aesthetic & Skin Clinic Milton Keynes",
   description:
     "Nurse-led aesthetic and skin clinic in Bletchley, Milton Keynes led by Sonali, Registered Nurse Prescriber. Natural-looking anti-wrinkle injections, dermal fillers, lip enhancement, HydraFacial, microneedling and chemical peels.",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     title: "SVR Aesthetics — Aesthetic & Skin Clinic Milton Keynes",
     description:
@@ -36,14 +55,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-GB" suppressHydrationWarning className={`${cormorant.variable} ${manrope.variable} h-full antialiased scroll-smooth`}>
       <head>
-        {/* Google Tag Manager */}
+        {/* Google Consent Mode v2 + Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-T5ZRBGC7');`,
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T5ZRBGC7');`,
           }}
         />
         {/* End Google Tag Manager */}
@@ -61,6 +78,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* End Google Tag Manager (noscript) */}
         {children}
         <ChatWidget />
+        <CookieConsent />
         <Analytics />
       </body>
     </html>

@@ -38,7 +38,7 @@ export function PageHero({
           </nav>
         )}
         <p className="eyebrow mt-8">{eyebrow}</p>
-        <h1 className="font-display mt-4 max-w-4xl text-[42px] leading-[1.04] text-ink sm:text-6xl lg:text-[64px]">
+        <h1 className="font-display mt-4 max-w-4xl text-[34px] sm:text-5xl lg:text-[64px] leading-[1.08] text-ink">
           {title} {highlight && <em className="italic text-plum">{highlight}</em>}
         </h1>
         {intro && <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-muted-ink">{intro}</p>}

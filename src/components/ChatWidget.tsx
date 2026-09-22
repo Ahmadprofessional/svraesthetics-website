@@ -24,7 +24,8 @@ export function ChatWidget() {
   const [showTooltip, setShowTooltip] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  const tooltipTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const showTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const hideTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const scrollToBottom = useCallback(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -38,17 +39,29 @@ export function ChatWidget() {
     if (isOpen && inputRef.current) inputRef.current.focus();
   }, [isOpen]);
 
-  // Show tooltip after 2s on first visit
+  // Show tooltip after 2.5s, stay for 5.5s, then automatically close
   useEffect(() => {
-    tooltipTimeout.current = setTimeout(() => setShowTooltip(true), 2000);
+    showTimerRef.current = setTimeout(() => {
+      setShowTooltip(true);
+
+      hideTimerRef.current = setTimeout(() => {
+        setShowTooltip(false);
+      }, 5500);
+    }, 2500);
+
     return () => {
-      if (tooltipTimeout.current) clearTimeout(tooltipTimeout.current);
+      if (showTimerRef.current) clearTimeout(showTimerRef.current);
+      if (hideTimerRef.current) clearTimeout(hideTimerRef.current);
     };
   }, []);
 
   // Hide tooltip when chat opens
   useEffect(() => {
-    if (isOpen) setShowTooltip(false);
+    if (isOpen) {
+      setShowTooltip(false);
+      if (showTimerRef.current) clearTimeout(showTimerRef.current);
+      if (hideTimerRef.current) clearTimeout(hideTimerRef.current);
+    }
   }, [isOpen]);
 
   const sendMessage = async (text: string) => {
@@ -100,6 +113,16 @@ export function ChatWidget() {
       <div className="fixed bottom-6 left-6 z-50 flex items-end gap-3">
         {/* Tooltip */}
         <div
+          onClick={() => {
+            setIsOpen(true);
+            setShowTooltip(false);
+          }}
+          onMouseEnter={() => {
+            if (hideTimerRef.current) clearTimeout(hideTimerRef.current);
+          }}
+          onMouseLeave={() => {
+            hideTimerRef.current = setTimeout(() => setShowTooltip(false), 2000);
+          }}
           style={{
             position: "absolute",
             left: 68,
@@ -109,9 +132,10 @@ export function ChatWidget() {
               showTooltip && !isOpen
                 ? "translateX(0) scale(1)"
                 : "translateX(-8px) scale(0.95)",
-            transition: "all 0.3s cubic-bezier(0.22,1,0.36,1)",
+            transition: "all 0.35s cubic-bezier(0.22,1,0.36,1)",
             pointerEvents: showTooltip && !isOpen ? "auto" : "none",
             whiteSpace: "nowrap",
+            cursor: "pointer",
           }}
         >
           <div

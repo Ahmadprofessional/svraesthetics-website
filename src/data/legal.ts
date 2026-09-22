@@ -2,6 +2,14 @@ export interface LegalSection {
   heading?: string;
   paragraphs?: string[];
   bullets?: string[];
+  table?: {
+    headers: string[];
+    rows: string[][];
+  };
+  action?: {
+    label: string;
+    event: string;
+  };
 }
 
 export interface LegalDoc {
@@ -86,8 +94,62 @@ export const legalDocs: LegalDoc[] = [
       },
       { heading: "How long we keep your information", paragraphs: ["Clinical records are retained for at least 8 years from your last treatment (or until age 25 for anyone treated under 18, which we do not do), in line with NHS records management guidance and our insurer's requirements. Enquiry details for people who do not become clients are deleted within 12 months. Financial records are kept for 6 years as required by HMRC. Website analytics data is retained according to the settings of the tools we use, typically no longer than 26 months."] },
       {
-        heading: "Cookies and analytics",
-        paragraphs: ["Our website uses strictly necessary cookies to function, and — with your consent — analytics and advertising cookies from Google (Google Analytics, Google Ads) and Meta to understand how visitors use the site and to measure our advertising. You can manage or withdraw consent at any time through your browser settings or our cookie banner. Blocking cookies may affect some website features."],
+        heading: "Cookies and tracking technologies",
+        paragraphs: [
+          "Our website uses cookies and similar technologies to ensure core functionality, analyse website usage, and support our advertising efforts. Under UK PECR and UK GDPR, non-essential cookies (such as analytics and marketing) are only placed on your device if you provide explicit consent via our cookie consent banner.",
+          "You can review or change your cookie preferences at any time using the button below or via your browser settings:",
+        ],
+        action: {
+          label: "Manage Cookie Preferences",
+          event: "open-cookie-preferences",
+        },
+        table: {
+          headers: ["Cookie / Identifier", "Category", "Provider", "Duration", "Purpose"],
+          rows: [
+            [
+              "svr_cookie_consent_v1",
+              "Strictly Necessary",
+              "SVR Aesthetics (First-party)",
+              "1 year",
+              "Stores your cookie consent preferences across sessions so you are not prompted repeatedly."
+            ],
+            [
+              "__cf_bm / cf_clearance",
+              "Strictly Necessary",
+              "Cloudflare",
+              "30 mins / 1 year",
+              "Bot detection and mitigation to protect form submissions from malicious automated traffic."
+            ],
+            [
+              "_ga / _ga_*",
+              "Analytics",
+              "Google Analytics 4",
+              "2 years",
+              "Collects anonymised statistical data on website visits, user journeys, and page views."
+            ],
+            [
+              "_gid",
+              "Analytics",
+              "Google Analytics",
+              "24 hours",
+              "Distinguishes unique users for aggregate session analytics."
+            ],
+            [
+              "_gcl_au",
+              "Marketing",
+              "Google Ads",
+              "90 days",
+              "Conversion linking for measuring ad click effectiveness and campaign performance."
+            ],
+            [
+              "_fbp",
+              "Marketing",
+              "Meta Platforms",
+              "90 days",
+              "Used to track conversions and serve relevant advertisements on Meta platforms."
+            ]
+          ]
+        },
       },
       {
         heading: "Your rights",

@@ -64,10 +64,60 @@ const legacyRedirects: Record<string, string> = {
   "/calender-page": "/book-free-consultation",
 };
 
+const securityHeaders = [
+  {
+    key: "X-DNS-Prefetch-Control",
+    value: "on",
+  },
+  {
+    key: "Strict-Transport-Security",
+    value: "max-age=63072000; includeSubDomains; preload",
+  },
+  {
+    key: "X-Content-Type-Options",
+    value: "nosniff",
+  },
+  {
+    key: "X-Frame-Options",
+    value: "SAMEORIGIN",
+  },
+  {
+    key: "Referrer-Policy",
+    value: "strict-origin-when-cross-origin",
+  },
+  {
+    key: "Permissions-Policy",
+    value: "camera=(), microphone=(), geolocation=()",
+  },
+  {
+    key: "Content-Security-Policy",
+    value: [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://static.cloudflareinsights.com",
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+      "img-src 'self' data: blob: https://svraesthetics.co.uk https://www.googletagmanager.com https://www.google-analytics.com https://*.google.com https://*.googleapis.com https://*.gstatic.com",
+      "font-src 'self' https://fonts.gstatic.com data:",
+      "connect-src 'self' https://generativelanguage.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://clinicconsent.com https://*.clinicconsent.com",
+      "frame-src 'self' https://clinicconsent.com https://www.googletagmanager.com https://www.google.com",
+      "frame-ancestors 'self'",
+    ].join("; "),
+  },
+];
+
 const nextConfig: NextConfig = {
   devIndicators: false,
+  compress: true,
   images: {
+    formats: ["image/avif", "image/webp"],
     remotePatterns: [{ protocol: "https", hostname: "svraesthetics.co.uk" }],
+  },
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: securityHeaders,
+      },
+    ];
   },
   async redirects() {
     return [
@@ -80,8 +130,11 @@ const nextConfig: NextConfig = {
       { source: "/book-appointment", destination: "/book-free-consultation", permanent: true },
       { source: "/booking", destination: "/book-free-consultation", permanent: true },
       { source: "/appointments", destination: "/book-free-consultation", permanent: true },
+      { source: "/privacy", destination: "/privacy-policy", permanent: true },
+      { source: "/terms", destination: "/terms-conditions", permanent: true },
     ];
   },
 };
 
 export default nextConfig;
+

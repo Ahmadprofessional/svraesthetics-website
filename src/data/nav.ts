@@ -61,7 +61,7 @@ export const treatmentGroups: NavGroup[] = [
       { label: "Hair Loss Treatment", href: "/best-hair-loss-treatment-in-milton-keynes-svr-aesthetics" },
       { label: "Vitamin Therapy", href: "/vitamin-therapy-milton-keynes" },
       { label: "Fat Dissolving Injections", href: "/fat-dissolving-injections-milton-keynes" },
-      { label: "Blood Tests", href: "/milton-keynes-blood-test" },
+      { label: "Blood Tests & IV Drips", href: "/blood-tests" },
       { label: "Full Body Massage", href: "/full-body-massage-milton-keynes" },
     ],
   },

@@ -1,8 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import { siteInfo, footerQuickLinks, footerPolicyLinks } from "@/data/site";
 import { FacebookIcon, InstagramIcon } from "@/components/icons";
 
 export function Footer() {
+  const openCookiePreferences = () => {
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new CustomEvent("open-cookie-preferences"));
+    }
+  };
+
   return (
     <footer className="bg-ivory pt-16">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 sm:grid-cols-2 sm:px-6 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
@@ -18,7 +26,23 @@ export function Footer() {
           </div>
         </div>
         <FooterCol title="Clinic" links={footerQuickLinks} />
-        <FooterCol title="Policies" links={footerPolicyLinks} />
+        <div>
+          <h4 className="text-[12px] font-semibold uppercase tracking-[0.2em] text-plum">Policies</h4>
+          <ul className="mt-4 space-y-2.5 text-[14px] text-muted-ink">
+            {footerPolicyLinks.map((l) => (
+              <li key={l.text}><a href={l.href} className="transition-colors hover:text-plum">{l.text}</a></li>
+            ))}
+            <li>
+              <button
+                type="button"
+                onClick={openCookiePreferences}
+                className="transition-colors hover:text-plum text-left cursor-pointer"
+              >
+                Cookie Preferences
+              </button>
+            </li>
+          </ul>
+        </div>
         <div>
           <h4 className="text-[12px] font-semibold uppercase tracking-[0.2em] text-plum">Find us</h4>
           <p className="mt-4 text-[14px] leading-relaxed text-muted-ink">{siteInfo.address}</p>
@@ -27,7 +51,16 @@ export function Footer() {
         </div>
       </div>
       <div className="mt-12 border-t border-sand py-6">
-        <p className="mx-auto max-w-7xl px-4 text-[12px] text-muted-ink sm:px-6">© {new Date().getFullYear()} SVR Aesthetics · All rights reserved · Treatments available to clients aged 18+</p>
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 text-[12px] text-muted-ink sm:flex-row sm:px-6">
+          <p>© {new Date().getFullYear()} SVR Aesthetics · All rights reserved · Treatments available to clients aged 18+</p>
+          <button
+            type="button"
+            onClick={openCookiePreferences}
+            className="transition-colors hover:text-plum underline underline-offset-4 cursor-pointer"
+          >
+            Cookie Settings
+          </button>
+        </div>
       </div>
     </footer>
   );
