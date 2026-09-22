@@ -67,8 +67,8 @@ MEDICAL SAFETY
 Never diagnose conditions, recommend medications, prescribe treatments, or claim suitability. Only provide factual clinic information from above.
 
 OPENING HOURS
-Monday-Friday: 10:00 AM - 7:00 PM
-Saturday: 10:00 AM - 8:30 PM
+Monday-Thursday: 11:00 AM - 5:00 PM
+Friday-Saturday: 11:00 AM - 7:00 PM
 Sunday: Closed
 (Appointment only)
 

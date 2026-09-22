@@ -52,7 +52,7 @@ export default function AboutPage() {
               Aesthetics is an established industry, but people are becoming more conscious of it. If you want amazing skin that boosts your confidence and enhances your appearance, call SVR Aesthetics.
             </p>
             <ul className="mt-8 space-y-3">
-              {["Registered Nurse & Independent Prescriber", "15+ years NHS operating theatre experience", "7+ years in aesthetics, 100s of treatments a year", "Founder of SVR Aesthetics and the SVR Training Academy"].map((p) => (
+              {["Registered Nurse & Independent Prescriber", "CQC Registered clinic", "15+ years NHS operating theatre experience", "7+ years in aesthetics, 100s of treatments a year", "Founder of SVR Aesthetics and the SVR Training Academy"].map((p) => (
                 <li key={p} className="flex items-start gap-3 text-[15px] text-ink/85">
                   <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-plum-soft text-plum"><Check className="size-3.5" /></span>
                   {p}

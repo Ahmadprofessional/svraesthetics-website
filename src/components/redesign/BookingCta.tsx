@@ -59,7 +59,7 @@ export function BookingCta({ source = "booking-section" }: { source?: string }) 
           </p>
           <div className="mt-4 flex items-center justify-center gap-1.5 text-[13px] font-semibold text-ivory/90">
             <span className="flex text-gold">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="size-3.5 fill-current" />)}</span>
-            <span>5-star rated on Google · Nurse Prescriber Led</span>
+            <span>5-star rated on Google · Nurse Prescriber Led · CQC Registered</span>
           </div>
 
           {/* Toggle buttons between Live Calendar & Callback */}
@@ -158,7 +158,7 @@ export function BookingCta({ source = "booking-section" }: { source?: string }) 
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-ivory/10"><Clock className="size-4" /></span>
-                  <span><span className="block text-[11px] uppercase tracking-wider text-ivory/60">Hours</span>Mon–Fri 10am–7pm · Sat 10am–8:30pm</span>
+                  <span><span className="block text-[11px] uppercase tracking-wider text-ivory/60">Hours</span>Mon–Thu 11am–5pm · Fri–Sat 11am–7pm (appointment only)</span>
                 </div>
               </div>
             </div>
