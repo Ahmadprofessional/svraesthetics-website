@@ -17,8 +17,8 @@ export function Hero() {
               <span className="flex text-gold">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="size-3.5 fill-current" />)}</span>
               5.0 on Google
             </span>
-            <span className="inline-flex items-center rounded-full bg-white/90 px-3 py-1.5 shadow">
-              <Image src="/images/cqc-logo.png" alt="CQC Registered — Care Quality Commission" width={130} height={41} className="h-6 w-auto" />
+            <span className="inline-flex items-center rounded-full bg-white/90 px-3.5 py-2 shadow">
+              <Image src="/images/cqc-logo.png" alt="CQC Registered — Care Quality Commission" width={190} height={60} className="h-9 w-auto" />
             </span>
           </div>
           <h1 className="font-display mt-5 text-[44px] leading-[1.02] text-ink sm:text-6xl lg:text-[72px]">

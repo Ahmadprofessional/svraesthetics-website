@@ -18,7 +18,7 @@ export const injectables: MenuTreatment[] = [
 
 export const facials: MenuTreatment[] = [
   { name: "HydraFacial", blurb: "Cleanse, extract and deeply hydrate for an instant, no-downtime glow.", href: "/hydrafacial-milton-keynes" },
-  { name: "Medical Microneedling", blurb: "Stimulate collagen to smooth scars, pores, fine lines and texture.", from: "£500", href: "/best-results-microneedling-in-milton-keynes-svr-aesthetics" },
+  { name: "Medical Microneedling", blurb: "Stimulate collagen to smooth scars, pores, fine lines and texture.", href: "/best-results-microneedling-in-milton-keynes-svr-aesthetics" },
   { name: "Chemical Peels", blurb: "Light to deep peels tailored to pigmentation, acne and dullness.", href: "/chemical-peels-milton-keynes" },
   { name: "Carbon (Hollywood) Peel", blurb: "Pico-laser peel that tightens pores and blurs imperfections in 30 minutes.", href: "/carbon-peel-milton-keynes" },
   { name: "Vampire Facial (PRP)", blurb: "Your own growth factors to rejuvenate tone, firmness and radiance.", href: "/vampire-facial" },
