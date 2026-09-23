@@ -61,8 +61,8 @@ export function BookingCta({ source = "booking-section" }: { source?: string }) 
           <div className="mt-4 flex items-center justify-center gap-1.5 text-[13px] font-semibold text-ivory/90">
             <span className="flex text-gold">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="size-3.5 fill-current" />)}</span>
             <span>5-star rated on Google · Nurse Prescriber Led</span>
-            <span className="flex items-center rounded-full bg-white px-2.5 py-1">
-              <Image src="/images/cqc-logo.png" alt="CQC Registered — Care Quality Commission" width={105} height={33} className="h-4 w-auto" />
+            <span className="flex items-center rounded-full bg-white px-3.5 py-2">
+              <Image src="/images/cqc-logo.png" alt="CQC Registered — Care Quality Commission" width={165} height={52} className="h-7 w-auto" />
             </span>
           </div>
 
