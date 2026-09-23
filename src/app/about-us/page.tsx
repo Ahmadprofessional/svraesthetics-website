@@ -59,6 +59,7 @@ export default function AboutPage() {
                 </li>
               ))}
             </ul>
+            <Image src="/images/cqc-logo.png" alt="CQC Registered — Care Quality Commission" width={140} height={44} className="mt-6 h-9 w-auto" />
           </Reveal>
         </div>
       </section>

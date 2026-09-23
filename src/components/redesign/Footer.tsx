@@ -19,7 +19,7 @@ export function Footer() {
           <p className="mt-4 max-w-sm text-[14px] leading-relaxed text-muted-ink">
             Nurse-led aesthetic clinic in Bletchley, Milton Keynes. Professional cosmetic care to help you look and feel as good as you can.
           </p>
-          <p className="mt-3 text-[12px] font-semibold uppercase tracking-[0.14em] text-plum">CQC Registered</p>
+          <Image src="/images/cqc-logo.png" alt="CQC Registered — Care Quality Commission" width={130} height={41} className="mt-4 h-8 w-auto" />
           <div className="mt-5 flex gap-2">
             <a href={siteInfo.facebook} aria-label="Facebook" className="flex size-10 items-center justify-center rounded-full border border-sand text-plum transition-colors hover:bg-plum hover:text-white"><FacebookIcon className="size-4" /></a>
             <a href={siteInfo.instagram} aria-label="Instagram" className="flex size-10 items-center justify-center rounded-full border border-sand text-plum transition-colors hover:bg-plum hover:text-white"><InstagramIcon className="size-4" /></a>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Clock, Mail, MapPin, Phone, Star, Calendar, MessageSquare, ExternalLink, Sparkles, Bot } from "lucide-react";
 import { siteInfo } from "@/data/site";
 import { WhatsAppIcon } from "@/components/icons";
@@ -59,7 +60,10 @@ export function BookingCta({ source = "booking-section" }: { source?: string }) 
           </p>
           <div className="mt-4 flex items-center justify-center gap-1.5 text-[13px] font-semibold text-ivory/90">
             <span className="flex text-gold">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="size-3.5 fill-current" />)}</span>
-            <span>5-star rated on Google · Nurse Prescriber Led · CQC Registered</span>
+            <span>5-star rated on Google · Nurse Prescriber Led</span>
+            <span className="flex items-center rounded-full bg-white px-2.5 py-1">
+              <Image src="/images/cqc-logo.png" alt="CQC Registered — Care Quality Commission" width={105} height={33} className="h-4 w-auto" />
+            </span>
           </div>
 
           {/* Toggle buttons between Live Calendar & Callback */}
