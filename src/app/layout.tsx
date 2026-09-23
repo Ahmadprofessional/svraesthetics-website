@@ -41,6 +41,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: "2A3hGrrR8-hEMCUEppBzd7T9fOdE2LFdz5h4tRYPvWI",
+  },
   openGraph: {
     title: "SVR Aesthetics — Aesthetic & Skin Clinic Milton Keynes",
     description:
@@ -64,6 +67,18 @@ gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user
           }}
         />
         {/* End Google Tag Manager */}
+
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9TQKLTSKE" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-T9TQKLTSKE');`,
+          }}
+        />
+        {/* End Google tag (gtag.js) */}
       </head>
       <body suppressHydrationWarning className="min-h-full flex flex-col font-body bg-ivory text-ink">
         {/* Google Tag Manager (noscript) */}
