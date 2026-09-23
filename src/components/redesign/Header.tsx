@@ -3,11 +3,11 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, Menu, Phone, X, ArrowRight } from "lucide-react";
+import { ChevronDown, Menu, Phone, X, ArrowRight, Bot } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { siteInfo } from "@/data/site";
 import { treatmentGroups, trainingGroup, primaryLinks, utilityLinks } from "@/data/nav";
-import { trackContactClick } from "@/lib/leads";
+import { trackContactClick, pushToDataLayer } from "@/lib/leads";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -54,6 +54,9 @@ export function Header() {
             ))}
             <a id="header-phone-desktop" href={siteInfo.phoneHref} onClick={() => trackContactClick("call")} className="gtm-phone-link flex items-center gap-2 font-semibold">
               <Phone className="size-3.5" /> {siteInfo.phone}
+            </a>
+            <a id="header-ai-phone-desktop" href={siteInfo.aiBookingPhoneHref} onClick={() => pushToDataLayer({ event: "ai_booking_call_click" })} className="flex items-center gap-2 font-semibold text-blush">
+              <Bot className="size-3.5" /> {siteInfo.aiBookingPhone}
             </a>
           </div>
           <a id="header-phone-mobile-bar" href={siteInfo.phoneHref} onClick={() => trackContactClick("call")} className="gtm-phone-link flex shrink-0 items-center gap-2 font-semibold lg:hidden">
@@ -205,6 +208,9 @@ export function Header() {
             </Link>
             <a id="header-phone-mobile-menu" href={siteInfo.phoneHref} onClick={() => trackContactClick("call")} className="gtm-phone-link mt-3 flex items-center justify-center gap-2 rounded-full border border-plum px-5 py-3.5 font-semibold text-plum">
               <Phone className="size-4" /> {siteInfo.phone}
+            </a>
+            <a id="header-ai-phone-mobile-menu" href={siteInfo.aiBookingPhoneHref} onClick={() => pushToDataLayer({ event: "ai_booking_call_click" })} className="mt-3 flex items-center justify-center gap-2 rounded-full border border-plum px-5 py-3.5 font-semibold text-plum">
+              <Bot className="size-4" /> {siteInfo.aiBookingPhone}
             </a>
           </div>
         </div>
