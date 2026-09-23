@@ -132,10 +132,10 @@ export const whyChooseUs = [
 ];
 
 export const beforeAfterImages: BeforeAfterImage[] = [
-  { src: "/images/before-after-botox.webp", alt: "Botox Treatment in Milton Keynes, Buckinghamshire" },
+  { src: "/images/before-after-botox.webp", alt: "Facial Smoothing Treatment in Milton Keynes, Buckinghamshire" },
   { src: "/images/before-after-cheek.webp", alt: "Cheek Augments Treatment in Milton Keynes" },
   { src: "/images/before-after-lipfiller.png", alt: "Lip filler Treatment in Milton Keynes" },
-  { src: "/images/before-after-botoxfiller.webp", alt: "Botox filler Treatment Buckingham" },
+  { src: "/images/before-after-botoxfiller.webp", alt: "Aesthetic Treatment Results Buckingham" },
 ];
 
 export const faqItems: FaqItem[] = [
@@ -188,7 +188,7 @@ export const relatedTreatments: RelatedTreatmentLink[] = [
   { text: "Facial Treatment in Milton Keynes", href: "/facials-milton-keynes" },
   { text: "Laser Treatment in Milton Keynes", href: "/laser-hair-removal-milton-keynes" },
   { text: "Hair Loss Treatment in Milton", href: "/best-hair-loss-treatment-in-milton-keynes-svr-aesthetics" },
-  { text: "Botox Treatment in Milton Keynes", href: "/botox-milton-keynes" },
+  { text: "Facial Smoothing in Milton Keynes", href: "/facial-smoothing-milton-keynes" },
   { text: "Body Test Treatment in Milton Keynes", href: "/full-body-massage-milton-keynes" },
 ];
 

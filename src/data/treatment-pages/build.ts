@@ -24,7 +24,7 @@ const IMG = {
 };
 
 export const catalog: Record<string, CatalogEntry> = {
-  "botox-milton-keynes": { name: "Botox", category: "Injectables", fromPrice: "£150", image: IMG.injectables, time: "15–30 min", results: "3–14 days", lasts: "3–4 months", downtime: "None", areasHeading: "Botox treatments we offer" },
+  "facial-smoothing-milton-keynes": { name: "Facial Smoothing", category: "Injectables", fromPrice: "£150", image: IMG.injectables, time: "15–30 min", results: "3–14 days", lasts: "3–4 months", downtime: "None", areasHeading: "Areas we can help with" },
   "anti-wrinkle-milton-keynes": { name: "Anti-Wrinkle Treatment", category: "Injectables", fromPrice: "£150", image: IMG.injectables, time: "15–30 min", results: "3–14 days", lasts: "3–4 months", downtime: "None", areasHeading: "Areas we treat" },
   "anti-wrinkle-injections-milton-keynes": { name: "Anti-Wrinkle Injections", category: "Injectables", fromPrice: "£150", image: IMG.injectables, time: "15 min", results: "3–14 days", lasts: "3–4 months", downtime: "None", areasHeading: "Areas we treat" },
   "jaw-tightening-milton-keynes": { name: "Jaw Tightening", category: "Injectables", image: IMG.fillers, time: "30–45 min", results: "Immediate", lasts: "12–18 months", downtime: "Minimal", areasHeading: "Jaw tightening options" },

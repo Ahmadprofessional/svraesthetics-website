@@ -118,7 +118,7 @@ export const blogPosts: BlogPost[] = [
     image: "/images/blog/anti-wrinkle-treatment-and-injections.webp",
     sections: [
       { heading: "What is The Best Anti-Wrinkle Treatment In The UK?", body: "As we age, repeated facial expressions lead to dynamic lines. Anti-wrinkle injections effectively target the facial muscles responsible for creating fine lines and wrinkles by relaxing them, offering a refreshed and youthful appearance without compromising natural expressions." },
-      { heading: "What Are Anti-Wrinkle Injections?", body: "Primarily Botox, these are among the most popular and effective cosmetic treatments, working by temporarily relaxing facial muscles by blocking nerve signals, with minimal downtime and effects lasting 3-6 months." },
+      { heading: "What Are Anti-Wrinkle Injections?", body: "These are among the most popular and effective cosmetic treatments, working by temporarily relaxing facial muscles by blocking nerve signals, with minimal downtime and effects lasting 3-6 months." },
       { heading: "What Are Anti-Wrinkle Injections Made Of?", body: "Made from a purified protein that temporarily relaxes targeted facial muscles, reducing fine lines and wrinkles." },
       { heading: "What Are Anti-Wrinkle Injections Used For?", body: "Mainly used to soften dynamic wrinkles, which are caused by facial expressions." },
       { heading: "What Does An Anti-Wrinkle Injection Do?", body: "It works by blocking muscle signals, making your skin relax and appear smoother." },

@@ -15,7 +15,7 @@ export const treatmentGroups: NavGroup[] = [
     href: "/anti-wrinkle-milton-keynes",
     items: [
       { label: "Anti-Wrinkle Injections", href: "/anti-wrinkle-injections-milton-keynes" },
-      { label: "Botox", href: "/botox-milton-keynes" },
+      { label: "Facial Smoothing", href: "/facial-smoothing-milton-keynes" },
       { label: "Jaw Tightening", href: "/jaw-tightening-milton-keynes" },
       { label: "Sweating Treatment", href: "/hyperhidrosis-excessive-sweating-treatment" },
     ],

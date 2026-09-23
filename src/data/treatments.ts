@@ -2,22 +2,22 @@ import type { Treatment } from "@/types/treatment";
 
 export const treatments: Treatment[] = [
   {
-    slug: "botox-milton-keynes",
-    heroHeading: "Natural-Looking Anti-Wrinkle Treatments at SVR Aesthetics",
+    slug: "facial-smoothing-milton-keynes",
+    heroHeading: "Consultations for Lines and Wrinkles at SVR Aesthetics",
     heroIntro:
-      "Looking for expert Botox in Milton Keynes from a qualified and trusted aesthetic practitioner? At SVR Aesthetics, we specialise in natural-looking anti-wrinkle treatments designed to soften lines, refresh your appearance, and help you feel more confident without looking frozen or overdone. Whether you're concerned about forehead lines, frown lines between the eyebrows, crow's feet, or excessive sweating, our personalised Botox treatments are tailored to your facial anatomy and aesthetic goals.",
+      "Considering treatment for lines, wrinkles or facial concerns? At SVR Aesthetics in Milton Keynes, every journey begins with a free, no-obligation consultation with Sonali, our Registered Nurse Prescriber. We assess your facial anatomy, listen to your goals, and recommend personalised treatment options designed to soften lines, refresh your appearance, and help you feel more confident — naturally.",
     whoWeOffer: [
-      "Botox for Forehead Lines Milton Keynes",
-      "Crow's Feet Botox Milton Keynes",
-      "Lip Flip Milton Keynes",
-      "Masseter Botox Milton Keynes",
-      "Hyperhidrosis Treatment Milton Keynes",
-      "Botox for Teeth Grinding Milton Keynes",
+      "Forehead Lines",
+      "Crow's Feet & Eye Area",
+      "Upper Lip Lines",
+      "Jawline Assessment",
+      "Excessive Sweating (Hyperhidrosis)",
+      "Teeth Grinding (Bruxism)",
     ],
     whatIs: {
-      heading: "What Is Botox Treatment UK?",
+      heading: "What happens during a consultation?",
       intro:
-        "Botox is a prescription-only injectable treatment that temporarily relaxes targeted facial muscles responsible for dynamic wrinkles and expression lines. Treatment sessions are typically completed within 15–30 minutes.",
+        "Your consultation is a thorough assessment with a qualified Registered Nurse Prescriber. We discuss your concerns, examine your facial anatomy, and explain all available treatment options — including prescription-only medicines where clinically appropriate — so you can make a fully informed decision.",
       bullets: [
         "Forehead lines",
         "Frown lines (Glabellar lines)",
@@ -30,9 +30,9 @@ export const treatments: Treatment[] = [
       ],
     },
     results: {
-      heading: "Botox Results How Long Last?",
+      heading: "What results can I expect?",
       intro:
-        "Every patient responds differently to treatment, which is why realistic expectations are essential. Many patients notice:",
+        "Every patient responds differently to treatment, which is why realistic expectations are discussed during your consultation. Many patients notice:",
       bullets: [
         "Softer forehead lines",
         "Reduced frown lines",
@@ -42,16 +42,16 @@ export const treatments: Treatment[] = [
       ],
     },
     trusted: {
-      heading: "Trusted Botox Clinic Milton Keynes",
+      heading: "Trusted Clinic in Milton Keynes",
       paragraph:
-        "Choosing a trusted Botox clinic in Milton Keynes is one of the most important decisions you can make when considering aesthetic treatment. At SVR Aesthetics, patient safety, education, and natural results remain at the centre of everything we do.",
+        "Choosing a trusted clinic in Milton Keynes is one of the most important decisions you can make when considering aesthetic treatment. At SVR Aesthetics, patient safety, education, and natural results remain at the centre of everything we do. Book a consultation to discuss treatment options for lines and wrinkles.",
     },
     faq: [
-      { question: "Is Botox safe?", answer: "When administered by a qualified practitioner, Botox has an excellent safety profile and has been used in medical and cosmetic treatments for decades." },
-      { question: "Does Botox hurt?", answer: "Most patients describe the treatment as a series of small pinches that are quick and easily tolerated." },
+      { question: "Is this treatment safe?", answer: "When administered by a qualified practitioner, these treatments have an excellent safety profile and have been used in medical and cosmetic settings for decades." },
+      { question: "Does treatment hurt?", answer: "Most patients describe the treatment as a series of small pinches that are quick and easily tolerated." },
       { question: "When will I see results?", answer: "Initial results often appear within 3 to 7 days, with full results visible after approximately 14 days." },
-      { question: "Can Botox look natural?", answer: "Yes. Modern Botox treatments focus on softening lines while preserving natural facial expressions." },
-      { question: "Is Botox suitable for first-time patients?", answer: "Absolutely. A consultation allows us to assess your suitability and discuss your desired outcome before treatment." },
+      { question: "Will results look natural?", answer: "Yes. Our approach focuses on softening lines while preserving your natural facial expressions." },
+      { question: "Is this suitable for first-time patients?", answer: "Absolutely. A consultation allows us to assess your suitability and discuss your desired outcome before any treatment begins." },
     ],
   },
   {

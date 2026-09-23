@@ -8,7 +8,7 @@ import { Reveal } from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Before & After Gallery | SVR Aesthetics Milton Keynes",
-  description: "Real, unretouched before and after results from SVR Aesthetics clients in Milton Keynes — Botox, cheek augmentation, lip filler and more.",
+  description: "Real, unretouched before and after results from SVR Aesthetics clients in Milton Keynes — facial smoothing, cheek augmentation, lip filler and more.",
   alternates: { canonical: "https://svraesthetics.co.uk/customers-gallery" },
 };
 
