@@ -48,6 +48,8 @@ export function Footer() {
           <p className="mt-4 text-[14px] leading-relaxed text-muted-ink">{siteInfo.address}</p>
           <a id="footer-phone-link" href={siteInfo.phoneHref} className="gtm-phone-link mt-3 block text-[14px] font-semibold text-ink">{siteInfo.phone}</a>
           <a href={`mailto:${siteInfo.email}`} className="block text-[14px] text-muted-ink">{siteInfo.email}</a>
+          <a id="footer-ai-phone-link" href={siteInfo.aiBookingPhoneHref} className="mt-3 block text-[14px] font-semibold text-ink">{siteInfo.aiBookingPhone}</a>
+          <p className="text-[12px] text-muted-ink">AI Booking Assistant — call anytime</p>
         </div>
       </div>
       <div className="mt-12 border-t border-sand py-6">

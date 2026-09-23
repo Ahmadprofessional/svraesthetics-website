@@ -75,6 +75,7 @@ Sunday: Closed
 CONTACT DETAILS
 Clinic Address: Unit 2, Stainer Square Centre, Queensway, Bletchley, Milton Keynes, MK2 2FY
 Phone / WhatsApp: 077 92284575
+AI Booking Assistant (call anytime to book by phone): +44 7455 757309
 Email: svraesthetics@gmail.com
 Booking Link: https://svraesthetics.co.uk/book-free-consultation/
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Clock, Mail, MapPin, Phone, Star, Calendar, MessageSquare, ExternalLink, Sparkles } from "lucide-react";
+import { Clock, Mail, MapPin, Phone, Star, Calendar, MessageSquare, ExternalLink, Sparkles, Bot } from "lucide-react";
 import { siteInfo } from "@/data/site";
 import { WhatsAppIcon } from "@/components/icons";
 import { submitLead, trackContactClick, pushToDataLayer } from "@/lib/leads";
@@ -127,6 +127,10 @@ export function BookingCta({ source = "booking-section" }: { source?: string }) 
                 Prefer to call? <a id="booking-instant-phone-link" href={siteInfo.phoneHref} onClick={() => trackContactClick("call")} className="gtm-phone-link text-plum font-semibold hover:underline">{siteInfo.phone}</a>
               </span>
             </div>
+            <div className="mt-2 flex items-center justify-center gap-1.5 text-[12px] text-muted-ink">
+              <Bot className="size-3.5 text-plum" />
+              Or book by phone anytime with our AI Booking Assistant: <a id="booking-instant-ai-phone-link" href={siteInfo.aiBookingPhoneHref} onClick={() => pushToDataLayer({ event: "ai_booking_call_click" })} className="text-plum font-semibold hover:underline">{siteInfo.aiBookingPhone}</a>
+            </div>
           </div>
         )}
 
@@ -143,6 +147,10 @@ export function BookingCta({ source = "booking-section" }: { source?: string }) 
                 <a id="booking-cta-phone-link" href={siteInfo.phoneHref} onClick={() => trackContactClick("call")} className="gtm-phone-link flex items-center gap-3">
                   <span className="flex size-10 items-center justify-center rounded-full bg-ivory/10"><Phone className="size-4" /></span>
                   <span><span className="block text-[11px] uppercase tracking-wider text-ivory/60">Call</span>{siteInfo.phone}</span>
+                </a>
+                <a id="booking-cta-ai-phone-link" href={siteInfo.aiBookingPhoneHref} onClick={() => pushToDataLayer({ event: "ai_booking_call_click" })} className="flex items-center gap-3">
+                  <span className="flex size-10 items-center justify-center rounded-full bg-ivory/10"><Bot className="size-4" /></span>
+                  <span><span className="block text-[11px] uppercase tracking-wider text-ivory/60">AI Booking Assistant</span>{siteInfo.aiBookingPhone}</span>
                 </a>
                 <a id="booking-cta-whatsapp-link" href="https://wa.me/447792284575" onClick={() => trackContactClick("whatsapp")} className="gtm-whatsapp-link flex items-center gap-3">
                   <span className="flex size-10 items-center justify-center rounded-full bg-ivory/10"><WhatsAppIcon className="size-4" /></span>

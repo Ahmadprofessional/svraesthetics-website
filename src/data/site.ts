@@ -10,6 +10,8 @@ import type {
 export const siteInfo = {
   phone: "077 92284575",
   phoneHref: "tel:07792284575",
+  aiBookingPhone: "+44 7455 757309",
+  aiBookingPhoneHref: "tel:+447455757309",
   email: "svraesthetics@gmail.com",
   address: "Unit 2, Stainer Square Centre, Queensway, Bletchley, Milton keynes, MK2 2FY",
   facebook: "https://www.facebook.com/SVR-Aesthetics-667714920360507",
