@@ -92,5 +92,6 @@ export const utilityLinks: NavLink[] = [
   { label: "Customers Gallery", href: "/customers-gallery" },
   { label: "Reviews", href: "/reviews" },
   { label: "FAQs", href: "/faq" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Book Free Consultation", href: "/book-free-consultation" },
 ];

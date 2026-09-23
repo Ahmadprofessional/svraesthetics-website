@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
-import { Cookie, ShieldCheck, Check, X, Sliders, ChevronRight } from "lucide-react";
+import { Cookie, ShieldCheck, Check, X, Sliders, ChevronRight, Bot } from "lucide-react";
 
 export interface CookiePreferences {
   necessary: true;
@@ -236,6 +236,24 @@ export function CookieConsent() {
                     />
                     <div className="w-11 h-6 bg-sand peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-sand after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-plum" />
                   </label>
+                </div>
+              </div>
+
+              {/* AI Assistant */}
+              <div className="rounded-2xl border border-sand bg-cream/30 p-4">
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <h4 className="text-[14.5px] font-semibold text-ink flex items-center gap-1.5">
+                      <Bot className="size-4 text-plum" />
+                      AI Booking & Chat Assistant
+                    </h4>
+                    <p className="mt-1 text-[12.5px] text-muted-ink">
+                      Calls to our AI Booking Assistant (+44 7455 757309) may be recorded and transcribed, and messages sent to our website chat assistant are processed by AI providers, solely to help you book an appointment or answer your questions. See our Privacy Policy for details.
+                    </p>
+                  </div>
+                  <span className="shrink-0 text-[12px] font-bold text-plum uppercase tracking-wider bg-plum/10 px-2.5 py-1 rounded-full">
+                    Always Active
+                  </span>
                 </div>
               </div>
             </div>
